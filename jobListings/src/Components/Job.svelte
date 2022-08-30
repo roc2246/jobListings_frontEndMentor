@@ -1,16 +1,16 @@
 <script>
-    export let company;
-    export let logo;
-    export let newPost;
-    export let featured;
-    export let position;
-    export let role;
-    export let level;
-    export let postedAt;
-    export let contract;
-    export let location;
-    export let languages;
-    export let tools;
+  export let company;
+  export let logo;
+  export let newPost;
+  export let featured;
+  export let position;
+  export let role;
+  export let level;
+  export let postedAt;
+  export let contract;
+  export let location;
+  export let languages;
+  export let tools;
 </script>
 
 <section class="job">
@@ -31,14 +31,16 @@
     <p>{role}</p>
     <p>{level}</p>
     <p>{languages}</p>
-    <p>r{tools}</p>
+    <p>{tools}</p>
   </span>
 </section>
 
 <style>
   .job {
     border: solid;
-    width: 75%;
-    margin: 2rem;
+    width: 80%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
   }
 </style>
