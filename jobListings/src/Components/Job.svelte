@@ -13,17 +13,6 @@
   export let tools;
 </script>
 
-<style>
-    .job {
-      border: solid;
-      width: 80%;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      padding: 1rem;
-    }
-  </style>
-  
-
 <section class="job">
   <div class="job__photo">
     <img src={logo} alt={company} />
@@ -47,3 +36,46 @@
   </span>
 </section>
 
+<style>
+  .job {
+    display: grid;
+    border: solid;
+    width: 80%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+  }
+
+  .job__company,
+  .job__details--commitment,
+  .job__details--stack {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .job__photo {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column: 1;
+  }
+  .job__company {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .job__title {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  .job__details--commitment {
+    grid-row: 3;
+    grid-column: 2;
+  }
+
+  .job__details--stack {
+    grid-row: 2;
+    grid-column: 3;
+  }
+</style>
