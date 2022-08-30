@@ -37,7 +37,8 @@
 </section>
 
 <style>
-  h4, p{
+  h4,
+  p {
     margin: 0;
   }
 
@@ -51,7 +52,6 @@
 
     grid-template-rows: repeat(3, 2rem);
     grid-template-columns: 8rem auto auto;
-    /* grid-gap: 0rem; */
   }
 
   .job__company,
@@ -73,15 +73,63 @@
   .job__title {
     grid-row: 2;
     grid-column: 2;
+    white-space: nowrap;
   }
   .job__details--commitment {
     grid-row: 3;
     grid-column: 2;
+    white-space: nowrap;
   }
 
   .job__details--stack {
     grid-row: 2;
     grid-column: 3;
     justify-content: right;
+    flex-wrap: wrap;
+  }
+  .job__details--stack > p{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    .job {
+      grid-template-rows: repeat(4, auto);
+      grid-template-columns: repeat(3, auto);
+      margin-top: 2rem;
+    }
+
+    .job__company, .job__title,
+    .job__details--commitment,
+    .job__details--stack {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin-top: 1rem;
+    }
+
+    .job__photo {
+      position: absolute;
+     margin-top: -4rem;
+     margin-left: -.5rem;
+     transform: scale(50%);
+    }
+    .job__company {
+      grid-row: 2;
+    }
+    .job__title {
+      grid-row: 3;
+    }
+    .job__details--commitment {
+      grid-row: 4;
+    }
+
+    .job__details--stack {
+      grid-row: 5;
+      justify-content: left;
+    }
+
+    .job__details--stack > p{
+      margin-left: 0;
+    }
   }
 </style>
