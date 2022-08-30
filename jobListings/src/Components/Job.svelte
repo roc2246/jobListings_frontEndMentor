@@ -31,9 +31,13 @@
   <span class="job__details--stack">
     <p class="role">{role}</p>
     <p class="level">{level}</p>
-    <p class="langiages">{languages}</p>
+    {#each languages as language, i}
+    <p class="languages-{i}">{language}</p>
+    {/each}
     {#if tools.length !== 0}
-      <p class="tools">{tools}</p>
+      {#each tools as tools, i}
+      <p class="tools-{i}">{tools}</p>
+      {/each}
     {/if}
   </span>
 </section>
@@ -86,8 +90,8 @@
     flex-wrap: wrap;
   }
   .job__details--stack > p {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
   }
 
   @media (max-width: 480px) {
