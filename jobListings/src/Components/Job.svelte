@@ -19,8 +19,12 @@
   </div>
   <span class="job__company">
     <p class="company">{company}</p>
-    <p class="new">{newPost}</p>
-    <p class="featured">{featured}</p>
+    {#if newPost !== false}
+    <p class="new">NEW!</p>
+    {/if}
+    {#if featured !== false}
+    <p class="featured">FEATURED</p>
+    {/if}
   </span>
   <h4 class="job__title">{position}</h4>
   <span class="job__details--commitment">
@@ -70,6 +74,10 @@
   .job__company {
     grid-row: 1;
     grid-column: 2;
+    
+  }
+  .job__company > p {
+    margin-right: .5rem;
   }
   .job__title {
     grid-row: 2;
@@ -84,7 +92,8 @@
   }
 
   .job__details--stack {
-    grid-row: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
     grid-column: 3;
     justify-content: right;
     flex-wrap: wrap;
@@ -94,7 +103,7 @@
     margin-right: .5rem;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 560px) {
     .job {
       grid-template-rows: repeat(4, auto);
       grid-template-columns: repeat(3, auto);
