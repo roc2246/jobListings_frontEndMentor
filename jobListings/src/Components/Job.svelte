@@ -74,7 +74,7 @@
   .job__company {
     grid-row: 1;
     grid-column: 2;
-    
+    white-space: nowrap;
   }
   .job__company > p {
     margin-right: .5rem;
@@ -87,7 +87,11 @@
   .job__details--commitment {
     grid-row: 3;
     grid-column: 2;
-    white-space: nowrap;
+flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .job__details--commitment>p {
+   
     margin-top: 0.5rem;
   }
 
@@ -101,6 +105,8 @@
   .job__details--stack > p {
     margin-left: .5rem;
     margin-right: .5rem;
+    margin-top: 0.5rem;
+
   }
 
   @media (max-width: 560px) {
