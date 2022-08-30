@@ -1,29 +1,44 @@
 <script>
-    export let title;
-    export let imgSrc;
-    export let postDate;
-    export let commitment;
-    export let location
+    export let company;
+    export let logo;
+    export let newPost;
+    export let featured;
+    export let position;
+    export let role;
+    export let level;
+    export let postedAt;
+    export let contract;
+    export let location;
+    export let languages;
+    export let tools;
 </script>
 
-
-
 <section class="job">
-    <div class="job__photo">
-        <img src="{imgSrc}" alt="{title}">
-    </div>
-    <h4 class="job__title">{title}</h4>
-    <span class="job__details">
-        <p>{postDate} &#183;</p>
-        <p>{commitment} &#183;</p>
-        <p>{location} &#183;</p>
-    </span>
+  <div class="job__photo">
+    <img src={logo} alt={company} />
+  </div>
+  <span class="job__newFeatured">
+    <p>{newPost}</p>
+    <p>{featured}</p>
+  </span>
+  <h4 class="job__title">{position}</h4>
+  <span class="job__details--commitment">
+    <p>{postedAt} &#183;</p>
+    <p>{contract} &#183;</p>
+    <p>{location} &#183;</p>
+  </span>
+  <span class="job__details--stack">
+    <p>{role}</p>
+    <p>{level}</p>
+    <p>{languages}</p>
+    <p>r{tools}</p>
+  </span>
 </section>
 
 <style>
-.job{
+  .job {
     border: solid;
     width: 75%;
     margin: 2rem;
-}
+  }
 </style>
