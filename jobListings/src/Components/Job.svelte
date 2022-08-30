@@ -32,7 +32,9 @@
     <p class="role">{role}</p>
     <p class="level">{level}</p>
     <p class="langiages">{languages}</p>
-    <p class="tools">{tools}</p>
+    {#if tools.length !== 0}
+      <p class="tools">{tools}</p>
+    {/if}
   </span>
 </section>
 
@@ -50,8 +52,8 @@
     margin-bottom: 0.5rem;
     padding: 1rem;
 
-    grid-template-rows: repeat(3, 2rem);
-    grid-template-columns: 8rem auto auto;
+    grid-template-rows: repeat(auto-fill, 2rem);
+    grid-template-columns: 8rem repeat(2, 1fr);
   }
 
   .job__company,
@@ -61,11 +63,6 @@
     flex-direction: row;
   }
 
-  .job__photo {
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column: 1;
-  }
   .job__company {
     grid-row: 1;
     grid-column: 2;
@@ -79,6 +76,7 @@
     grid-row: 3;
     grid-column: 2;
     white-space: nowrap;
+    margin-top: 0.5rem;
   }
 
   .job__details--stack {
@@ -87,7 +85,7 @@
     justify-content: right;
     flex-wrap: wrap;
   }
-  .job__details--stack > p{
+  .job__details--stack > p {
     margin-left: 1rem;
     margin-right: 1rem;
   }
@@ -99,7 +97,8 @@
       margin-top: 2rem;
     }
 
-    .job__company, .job__title,
+    .job__company,
+    .job__title,
     .job__details--commitment,
     .job__details--stack {
       grid-column-start: 1;
@@ -109,9 +108,9 @@
 
     .job__photo {
       position: absolute;
-     margin-top: -4rem;
-     margin-left: -.5rem;
-     transform: scale(50%);
+      margin-top: -4rem;
+      margin-left: -0.5rem;
+      transform: scale(50%);
     }
     .job__company {
       grid-row: 2;
@@ -128,7 +127,7 @@
       justify-content: left;
     }
 
-    .job__details--stack > p{
+    .job__details--stack > p {
       margin-left: 0;
     }
   }
