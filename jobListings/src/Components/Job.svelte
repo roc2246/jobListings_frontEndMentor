@@ -37,6 +37,10 @@
 </section>
 
 <style>
+  h4, p{
+    margin: 0;
+  }
+
   .job {
     display: grid;
     border: solid;
@@ -45,8 +49,9 @@
     margin-bottom: 0.5rem;
     padding: 1rem;
 
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto auto auto;
+    grid-template-rows: repeat(3, 2rem);
+    grid-template-columns: 8rem auto auto;
+    /* grid-gap: 0rem; */
   }
 
   .job__company,
@@ -77,5 +82,6 @@
   .job__details--stack {
     grid-row: 2;
     grid-column: 3;
+    justify-content: right;
   }
 </style>
