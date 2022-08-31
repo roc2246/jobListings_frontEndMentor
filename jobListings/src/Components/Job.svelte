@@ -20,10 +20,10 @@
   <span class="job__company">
     <p class="company">{company}</p>
     {#if newPost !== false}
-    <p class="new">NEW!</p>
+      <p class="new">NEW!</p>
     {/if}
     {#if featured !== false}
-    <p class="featured">FEATURED</p>
+      <p class="featured">FEATURED</p>
     {/if}
   </span>
   <h4 class="job__title">{position}</h4>
@@ -33,14 +33,14 @@
     <p class="location">{location} &#183;</p>
   </span>
   <span class="job__details--stack">
-    <p class="role">{role}</p>
-    <p class="level">{level}</p>
+    <button class="role">{role}</button>
+    <button class="level">{level}</button>
     {#each languages as language, i}
-    <p class="languages-{i}">{language}</p>
+      <button class="languages-{i}">{language}</button>
     {/each}
     {#if tools.length !== 0}
       {#each tools as tools, i}
-      <p class="tools-{i}">{tools}</p>
+        <button class="tools-{i}">{tools}</button>
       {/each}
     {/if}
   </span>
@@ -50,6 +50,23 @@
   h4,
   p {
     margin: 0;
+    padding: 0;
+  }
+  button {
+    display: inline-block;
+    height: 2rem;
+    margin: 0;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: -0.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  button,
+  .job__title {
+    cursor: pointer;
   }
 
   .job {
@@ -77,21 +94,20 @@
     white-space: nowrap;
   }
   .job__company > p {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
   .job__title {
     grid-row: 2;
     grid-column: 2;
+
     white-space: nowrap;
   }
   .job__details--commitment {
     grid-row: 3;
     grid-column: 2;
-flex-wrap: wrap;
-    margin-top: 0.5rem;
+    flex-wrap: wrap;
   }
-  .job__details--commitment>p {
-   
+  .job__details--commitment > p {
     margin-top: 0.5rem;
   }
 
@@ -99,14 +115,9 @@ flex-wrap: wrap;
     grid-row-start: 2;
     grid-row-end: 5;
     grid-column: 3;
+    margin-top: -0.05rem;
     justify-content: right;
     flex-wrap: wrap;
-  }
-  .job__details--stack > p {
-    margin-left: .5rem;
-    margin-right: .5rem;
-    margin-top: 0.5rem;
-
   }
 
   @media (max-width: 560px) {
@@ -146,7 +157,7 @@ flex-wrap: wrap;
       justify-content: left;
     }
 
-    .job__details--stack > p {
+    .job__details--stack > button {
       margin-left: 0;
     }
   }
