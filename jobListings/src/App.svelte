@@ -157,7 +157,7 @@
   let filteredJobs = []
   $: Object.keys(jobs).filter((job) => {
     
-    if (jobs[job].tools.includes("Django")) {
+    if (jobs[job].languages.includes("HTML")) {
       filteredJobs.push(jobs[job])
     };
 

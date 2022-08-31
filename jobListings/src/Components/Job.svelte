@@ -13,6 +13,11 @@
   export let tools;
 
   let filter;
+
+  const setFilter = (category) => {
+    filter = category;
+    console.log(filter);
+  };
 </script>
 
 <section class="job ">
@@ -35,29 +40,17 @@
     <p class="location">{location} &#183;</p>
   </span>
   <span class="job__details--stack">
-    <button
-      on:click={() => (filter = { role })}
-      on:click={console.log({ filter })}
-      class="role">{role}</button
-    >
-    <button
-      on:click={() => (filter = { level })}
-      on:click={console.log({ filter })}
-      class="level">{level}</button
-    >
+    <button on:click={() => setFilter({ role })} class="role">{role}</button>
+    <button on:click={() => setFilter({ level })} class="level">{level}</button>
     {#each languages as language}
-      <button
-        on:click={() => (filter = { language })}
-        on:click={console.log({ filter })}
-        class="languages">{language}</button
+      <button on:click={() => setFilter({ language })} class="languages"
+        >{language}</button
       >
     {/each}
     {#if tools.length !== 0}
       {#each tools as tool}
-        <button
-          on:click={() => (filter = { tool })}
-          on:click={console.log({ filter })}
-          class="tools">{tool}</button
+        <button on:click={() => setFilter({ tool })} class="tools"
+          >{tool}</button
         >
       {/each}
     {/if}
