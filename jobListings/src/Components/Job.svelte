@@ -12,11 +12,24 @@
   export let languages;
   export let tools;
 
-  let filter;
+  let filter = [];
 
   const setFilter = (category) => {
-    filter = category;
-    console.log(filter);
+    let keyValue = JSON.stringify(Object.values(category));
+    keyValue = keyValue.replace('["', "");
+    keyValue = keyValue.replace('"]', "");
+    if (!filter.includes(keyValue)) {
+      filter.push(keyValue);
+      console.log("filter added");
+      console.log(filter);
+    } else {
+      filter = filter.filter((value)=>{
+       return value !== keyValue
+      })
+      console.log("filter removed");
+      console.log(filter);
+    }
+    return filter;
   };
 </script>
 
