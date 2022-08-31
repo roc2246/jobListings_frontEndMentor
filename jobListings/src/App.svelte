@@ -156,7 +156,7 @@
   ];
 
   var i = 1;
-  let filteredKeys = ["RoR", "JavaScript"]
+  let filteredKeys = []
   let filteredJobs = []
   $: Object.keys(jobs).filter((job) => {
 
@@ -181,18 +181,15 @@
     } 
   });
 
-//   let arr1 = [1, 2, 3];
-// let arr2 = [2, 3];
-
-// let isFounded = arr1.some( ai => arr2.includes(ai) );
-
-// console.log(isFounded)
-
 </script>
 
 <header />
 <main>
-  <JobGrid jobs="{filteredJobs}" />
+  {#if filteredJobs.length !== 0}
+  <JobGrid jobs={filteredJobs} />
+{:else}
+  <JobGrid {jobs} />
+{/if}
 </main>
 
 <style>
