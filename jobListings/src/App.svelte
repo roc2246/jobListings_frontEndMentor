@@ -156,18 +156,29 @@
   ];
 
   var i = 1;
-  let filteredJobs = ["Ruby"]
+  let filteredKeys = ["RoR", "JavaScript"]
+  let filteredJobs = []
   $: Object.keys(jobs).filter((job) => {
-    
-    // console.log(jobs[job].languages)
-    // console.log(jobs[job].tools)
 
-    if(jobs[job].languages.some(fj => filteredJobs.includes(fj)) === true){
+      // Checks for non-nested values
+    if(Object.values(jobs[job]).some(fj => filteredKeys.includes(fj)) === true){
       console.log(jobs[job])
       console.log(i++)
-    } else {
-      console.log(jobs[job].languages.some(fj => filteredJobs.includes(fj)))
+      filteredJobs.push(jobs[job])
     }
+
+    // Checks for nested values
+    if(jobs[job].tools.some(fj => filteredKeys.includes(fj)) === true){
+      console.log(jobs[job])
+      console.log(i++)
+      filteredJobs.push(jobs[job])
+    } 
+
+    if(jobs[job].languages.some(fj => filteredKeys.includes(fj)) === true){
+      console.log(jobs[job])
+      console.log(i++)
+      filteredJobs.push(jobs[job])
+    } 
   });
 
 //   let arr1 = [1, 2, 3];
@@ -181,7 +192,7 @@
 
 <header />
 <main>
-  <JobGrid jobs="{jobs}" />
+  <JobGrid jobs="{filteredJobs}" />
 </main>
 
 <style>
