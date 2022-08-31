@@ -1,5 +1,6 @@
 <script>
   import JobGrid from "./Components/JobGrid.svelte";
+  import {filterKeys} from "./Components/Job.svelte"
 
   let jobs = [
     {
@@ -154,14 +155,26 @@
     },
   ];
 
-  let filteredJobs = []
+  var i = 1;
+  let filteredJobs = ["JavaScript", "Python", "HTML", "Ruby"]
   $: Object.keys(jobs).filter((job) => {
     
-    if (jobs[job].languages.includes("HTML")) {
-      filteredJobs.push(jobs[job])
-    };
+    // console.log(jobs[job].languages)
+    // console.log(jobs[job].tools)
 
+    if(jobs[job].languages.some(fj => filteredJobs.includes(fj)) === true){
+      console.log(jobs[job].languages)
+      console.log(i++)
+    }
   });
+
+//   let arr1 = [1, 2, 3];
+// let arr2 = [2, 3];
+
+// let isFounded = arr1.some( ai => arr2.includes(ai) );
+
+// console.log(isFounded)
+
 </script>
 
 <header />

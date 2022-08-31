@@ -12,28 +12,31 @@
   export let languages;
   export let tools;
 
-  let filter = [];
-
-  const setFilter = (category) => {
-    let keyValue = JSON.stringify(Object.values(category));
-    keyValue = keyValue.replace('["', "");
-    keyValue = keyValue.replace('"]', "");
-    if (!filter.includes(keyValue)) {
-      filter.push(keyValue);
-      console.log("filter added");
-      console.log(filter);
-    } else {
-      filter = filter.filter((value)=>{
-       return value !== keyValue
-      })
-      console.log("filter removed");
-      console.log(filter);
-    }
-    return filter;
-  };
 </script>
 
-<section class="job ">
+<script context="module">
+  export let filterKeys= [];
+
+const setFilter = (category) => {
+  let keyValue = JSON.stringify(Object.values(category));
+  keyValue = keyValue.replace('["', "");
+  keyValue = keyValue.replace('"]', "");
+  if (!filterKeys.includes(keyValue)) {
+    filterKeys.push(keyValue);
+    console.log("filter  added");
+  } else {
+    filterKeys= filterKeys.filter((value)=>{
+     return value !== keyValue
+    })
+    console.log("filter removed"); 
+  }
+  return filterKeys
+};
+
+
+</script>
+
+<section class="job">
   <div class="job__photo">
     <img src={logo} alt={company} />
   </div>
