@@ -75,8 +75,8 @@
       postedAt: "1w ago",
       contract: "Full Time",
       location: "Worldwide",
-      languages: ["JavaScript"],
-      tools: ["Ruby", "Sass"],
+      languages: ["JavaScript", "Ruby"],
+      tools: ["Sass"],
     },
     {
       id: 6,
@@ -156,15 +156,17 @@
   ];
 
   var i = 1;
-  let filteredJobs = ["JavaScript", "Python", "HTML", "Ruby"]
+  let filteredJobs = ["Ruby"]
   $: Object.keys(jobs).filter((job) => {
     
     // console.log(jobs[job].languages)
     // console.log(jobs[job].tools)
 
     if(jobs[job].languages.some(fj => filteredJobs.includes(fj)) === true){
-      console.log(jobs[job].languages)
+      console.log(jobs[job])
       console.log(i++)
+    } else {
+      console.log(jobs[job].languages.some(fj => filteredJobs.includes(fj)))
     }
   });
 
