@@ -1,6 +1,6 @@
 <script>
   import JobGrid from "./Components/JobGrid.svelte";
-  import {filterKeys} from "./Components/Job.svelte"
+  import { filterKeys } from "./Components/Job.svelte";
 
   let jobs = [
     {
@@ -156,40 +156,28 @@
   ];
 
   var i = 1;
-  let filteredKeys = []
-  let filteredJobs = []
+  let filteredKeys = ["Frontend"];
+  let filteredJobs = [];
   $: Object.keys(jobs).filter((job) => {
+    const values = Object.values(jobs[job]).flat();
 
-      // Checks for non-nested values
-    if(Object.values(jobs[job]).some(fj => filteredKeys.includes(fj)) === true){
-      console.log(jobs[job])
-      console.log(i++)
-      filteredJobs.push(jobs[job])
-    }
-
-    // Checks for nested values
-    if(jobs[job].tools.some(fj => filteredKeys.includes(fj)) === true){
-      console.log(jobs[job])
-      console.log(i++)
-      filteredJobs.push(jobs[job])
-    } 
-
-    if(jobs[job].languages.some(fj => filteredKeys.includes(fj)) === true){
-      console.log(jobs[job])
-      console.log(i++)
-      filteredJobs.push(jobs[job])
+    if (filteredKeys.every((key) => values.includes(key))) {
+      filteredJobs.push(jobs[job]);
     } 
   });
 
+
 </script>
 
-<header />
+<header>
+  <h1>Insert image for header here</h1>
+</header>
 <main>
   {#if filteredJobs.length !== 0}
-  <JobGrid jobs={filteredJobs} />
-{:else}
-  <JobGrid {jobs} />
-{/if}
+    <JobGrid jobs={filteredJobs} />
+  {:else}
+    <JobGrid {jobs} />
+  {/if}
 </main>
 
 <style>
