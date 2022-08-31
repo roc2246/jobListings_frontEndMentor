@@ -154,17 +154,19 @@
     },
   ];
 
+  let filteredJobs = []
   $: Object.keys(jobs).filter((job) => {
     
-    if (jobs[job].contract === "Part Time") {
-      console.log(jobs[job])
+    if (jobs[job].tools.includes("Django")) {
+      filteredJobs.push(jobs[job])
     };
+
   });
 </script>
 
 <header />
 <main>
-  <JobGrid {jobs} />
+  <JobGrid jobs="{jobs}" />
 </main>
 
 <style>

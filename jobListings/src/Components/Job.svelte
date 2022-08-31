@@ -11,9 +11,11 @@
   export let location;
   export let languages;
   export let tools;
+
+  let filter;
 </script>
 
-<section class="job">
+<section class="job ">
   <div class="job__photo">
     <img src={logo} alt={company} />
   </div>
@@ -33,14 +35,30 @@
     <p class="location">{location} &#183;</p>
   </span>
   <span class="job__details--stack">
-    <button class="role">{role}</button>
-    <button class="level">{level}</button>
-    {#each languages as language, i}
-      <button class="languages-{i}">{language}</button>
+    <button
+      on:click={() => (filter = { role })}
+      on:click={console.log({ filter })}
+      class="role">{role}</button
+    >
+    <button
+      on:click={() => (filter = { level })}
+      on:click={console.log({ filter })}
+      class="level">{level}</button
+    >
+    {#each languages as language}
+      <button
+        on:click={() => (filter = { language })}
+        on:click={console.log({ filter })}
+        class="languages">{language}</button
+      >
     {/each}
     {#if tools.length !== 0}
-      {#each tools as tools, i}
-        <button class="tools-{i}">{tools}</button>
+      {#each tools as tool}
+        <button
+          on:click={() => (filter = { tool })}
+          on:click={console.log({ filter })}
+          class="tools">{tool}</button
+        >
       {/each}
     {/if}
   </span>
