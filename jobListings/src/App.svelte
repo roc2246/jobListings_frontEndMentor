@@ -156,14 +156,18 @@
   ];
 
   var i = 1;
-  // let filteredKeys = ["HTML"];
+  let filteredKeys = ["HTML"];
   let filteredJobs = [];
-  
+  console.log(filterKeys);
+  // setTimeout(()=> {
+  //   console.log(filterKeys)
+  // }, 8000)
+
   $: Object.keys(jobs).filter((job) => {
     const values = Object.values(jobs[job]).flat();
-    if (filterKeys.every((key) => values.includes(key))) {
+    if (filteredKeys.every((key) => values.includes(key))) {
       filteredJobs = [...filteredJobs, jobs[job]]
-      console.log(filteredJobs)
+      console.log(jobs[job])
     }
   });
 </script>
