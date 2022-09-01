@@ -156,17 +156,16 @@
   ];
 
   var i = 1;
-  let filteredKeys = [...filterKeys];
+  // let filteredKeys = ["HTML"];
   let filteredJobs = [];
+  
   $: Object.keys(jobs).filter((job) => {
     const values = Object.values(jobs[job]).flat();
-
-    if (filteredKeys.every((key) => values.includes(key))) {
-      filteredJobs.push(jobs[job]);
-    } 
+    if (filterKeys.every((key) => values.includes(key))) {
+      filteredJobs = [...filteredJobs, jobs[job]]
+      console.log(filteredJobs)
+    }
   });
-
-
 </script>
 
 <header>
