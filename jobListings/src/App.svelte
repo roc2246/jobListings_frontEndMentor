@@ -156,7 +156,7 @@
   ];
 
   var i = 1;
-  let filteredKeys = ["Frontend"];
+  let filteredKeys = [...filterKeys];
   let filteredJobs = [];
   $: Object.keys(jobs).filter((job) => {
     const values = Object.values(jobs[job]).flat();

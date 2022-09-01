@@ -1,4 +1,6 @@
 <script>
+  import Button from '../UI/Button.svelte'
+
   export let company;
   export let logo;
   export let newPost;
@@ -56,18 +58,14 @@ const setFilter = (category) => {
     <p class="location">{location} &#183;</p>
   </span>
   <span class="job__details--stack">
-    <button on:click={() => setFilter({ role })} class="role">{role}</button>
-    <button on:click={() => setFilter({ level })} class="level">{level}</button>
+    <Button on:click={() => setFilter({ role })} category="{role}"/>
+      <Button on:click={() => setFilter({ level })} category="{level}"/>
     {#each languages as language}
-      <button on:click={() => setFilter({ language })} class="languages"
-        >{language}</button
-      >
+      <Button on:click={() => setFilter({ language })} category="{language}"/>
     {/each}
     {#if tools.length !== 0}
       {#each tools as tool}
-        <button on:click={() => setFilter({ tool })} class="tools"
-          >{tool}</button
-        >
+      <Button on:click={() => setFilter({ tool })} category="{tool}"/>
       {/each}
     {/if}
   </span>
@@ -79,19 +77,7 @@ const setFilter = (category) => {
     margin: 0;
     padding: 0;
   }
-  button {
-    display: inline-block;
-    height: 2rem;
-    margin: 0;
-    text-align: center;
-    font-size: 15px;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    margin-top: -0.25rem;
-    margin-bottom: 0.75rem;
-  }
 
-  button,
   .job__title {
     cursor: pointer;
   }
@@ -182,10 +168,6 @@ const setFilter = (category) => {
     .job__details--stack {
       grid-row: 5;
       justify-content: left;
-    }
-
-    .job__details--stack > button {
-      margin-left: 0;
     }
   }
 </style>
