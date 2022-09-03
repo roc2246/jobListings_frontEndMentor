@@ -1,28 +1,6 @@
-<script context="module">
-  export let filterKeys = [];
-
-  const setFilter = (category) => {
-    let keyValue = JSON.stringify(Object.values(category));
-    keyValue = keyValue.replace('["', "");
-    keyValue = keyValue.replace('"]', "");
-    if (!filterKeys.includes(keyValue)) {
-      filterKeys = [...filterKeys,  keyValue]
-      console.log(filterKeys)
-      console.log("filter added");
-    } else {
-      filterKeys = filterKeys.filter((value) => {
-        return value !== keyValue;
-      });
-      console.log(filterKeys)
-      console.log("filter removed");
-    }
-    return filterKeys;
-  };
-</script>
-
 <script>
   import Button from "../UI/Button.svelte";
-
+  export let filterKeys = [];
   export let company;
   export let logo;
   export let newPost;
@@ -35,6 +13,24 @@
   export let location;
   export let languages;
   export let tools;
+
+  const setFilter = (category) => {
+    let keyValue = JSON.stringify(Object.values(category));
+    keyValue = keyValue.replace('["', "");
+    keyValue = keyValue.replace('"]', "");
+    if (!filterKeys.includes(keyValue)) {
+      filterKeys = [...filterKeys, keyValue];
+      console.log(filterKeys);
+      console.log("filter added");
+    } else {
+      filterKeys = filterKeys.filter((value) => {
+        return value !== keyValue;
+      });
+      console.log(filterKeys);
+      console.log("filter removed");
+    }
+    return filterKeys;
+  };
 </script>
 
 <section class="job">
@@ -57,14 +53,14 @@
     <p class="location">{location} &#183;</p>
   </span>
   <span class="job__details--stack">
-    <Button on:click={() => setFilter({ role })} category={role} />
-    <Button on:click={() => setFilter({ level })} category={level} />
+    <Button on:click={() => setFilter({ role })}>{role}</Button>
+    <Button on:click={() => setFilter({ level })}>{level}</Button>
     {#each languages as language}
-      <Button on:click={() => setFilter({ language })} category={language} />
+      <Button on:click={() => setFilter({ language })}>{language}</Button>
     {/each}
     {#if tools.length !== 0}
       {#each tools as tool}
-        <Button on:click={() => setFilter({ tool })} category={tool} />
+        <Button on:click={() => setFilter({ tool })}>{tool}</Button>
       {/each}
     {/if}
   </span>

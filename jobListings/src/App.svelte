@@ -1,6 +1,5 @@
 <script>
   import JobGrid from "./Components/JobGrid.svelte";
-  import { filterKeys } from "./Components/Job.svelte";
 
   let jobs = [
     {
@@ -156,18 +155,13 @@
   ];
 
   var i = 1;
-  let filteredKeys = ["HTML"];
+  let filteredKeys = [];
   let filteredJobs = [];
-  console.log(filterKeys);
-  // setTimeout(()=> {
-  //   console.log(filterKeys)
-  // }, 8000)
-
+  
   $: Object.keys(jobs).filter((job) => {
     const values = Object.values(jobs[job]).flat();
     if (filteredKeys.every((key) => values.includes(key))) {
       filteredJobs = [...filteredJobs, jobs[job]]
-      console.log(jobs[job])
     }
   });
 </script>

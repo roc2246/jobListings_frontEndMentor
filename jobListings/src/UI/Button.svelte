@@ -1,8 +1,8 @@
 <script>
-export let category
+export let category = null;
 </script>
 
-<button on:click class="{category}">{category}</button>
+<button on:click class="{category}"><slot /></button>
 
 <style>
 
