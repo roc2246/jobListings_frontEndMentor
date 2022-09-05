@@ -1,7 +1,6 @@
 <script>
   import filterKeys from "../subscriptions/filterKeys";
   import Button from "../UI/Button.svelte";
-  // export let filterKeys = [];
 
   export let company;
   export let logo;
@@ -23,13 +22,11 @@
     filterKeys.update((keys) => {
       if (!keys.includes(keyValue)) {
         keys = [...keys, keyValue];
-        console.log(keys);
         console.log("filter added");
       } else {
         keys = keys.filter((value) => {
           return value !== keyValue;
         });
-        console.log(keys);
         console.log("filter removed");
       }
       return [...keys];

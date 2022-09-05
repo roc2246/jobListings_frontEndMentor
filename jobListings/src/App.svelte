@@ -1,4 +1,5 @@
 <script>
+  import filterKeys from "./subscriptions/filterKeys.js";
   import JobGrid from "./Components/JobGrid.svelte";
 
   let jobs = [
@@ -154,27 +155,52 @@
     },
   ];
 
-  var i = 1;
-  let filteredKeys = [];
   let filteredJobs = [];
-  
-  $: Object.keys(jobs).filter((job) => {
-    const values = Object.values(jobs[job]).flat();
-    if (filteredKeys.every((key) => values.includes(key))) {
-      filteredJobs = [...filteredJobs, jobs[job]]
-    }
-  });
+
+  // Creates nested array with objects consisting of just the job values
+  const jobValues = () => {
+    let flattenedJobs = [];
+    Object.keys(jobs).forEach((job) => {
+      const values = Object.values(jobs[job]).flat();
+      flattenedJobs = [...flattenedJobs, values];
+    });
+    return flattenedJobs;
+  };
+  const flattenedJobs = jobValues();
+
+  const applyFilters = () => {
+    Object.keys(jobs).forEach((job) => {
+      const hasFilters =
+        $filterKeys.every((key) => flattenedJobs[job].includes(key, 0)) &&
+        $filterKeys.length !== 0;
+      if (hasFilters) {
+        console.log("TRUE");
+      } else {
+        console.log("false");
+      }
+    });
+  };
+  let i = 1
+  $: if ($filterKeys.length === 0) {
+    filteredJobs = jobs;
+  } else {
+    filteredJobs = []
+    Object.keys(jobs).forEach((job) => {
+      const hasFilters =
+        $filterKeys.every((key) => flattenedJobs[job].includes(key, 0)) &&
+        $filterKeys.length !== 0;
+      if (hasFilters) {
+        filteredJobs = [...filteredJobs, jobs[job]]
+      } 
+    });
+  }
 </script>
 
 <header>
   <h1>Insert image for header here</h1>
 </header>
 <main>
-  {#if filteredJobs.length !== 0}
-    <JobGrid jobs={filteredJobs} />
-  {:else}
-    <JobGrid {jobs} />
-  {/if}
+  <JobGrid jobs={filteredJobs} />
 </main>
 
 <style>
