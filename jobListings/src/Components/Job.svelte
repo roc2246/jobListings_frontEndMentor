@@ -53,6 +53,7 @@
     <p class="contract">{contract} &#183;</p>
     <p class="location">{location} &#183;</p>
   </span>
+  <hr>
   <span class="job__details--stack">
     <Button on:click={() => setFilter({ role })}>{role}</Button>
     <Button on:click={() => setFilter({ level })}>{level}</Button>
@@ -129,9 +130,13 @@
     flex-wrap: wrap;
   }
 
+  hr {
+    display: none;
+  }
+
   @media (max-width: 560px) {
     .job {
-      grid-template-rows: repeat(4, auto);
+      grid-template-rows: repeat(6, auto);
       grid-template-columns: repeat(3, auto);
       margin-top: 2rem;
     }
@@ -160,9 +165,18 @@
     .job__details--commitment {
       grid-row: 4;
     }
+    hr{
+      display: block;
+      height: .05rem;
+      width: 100%;
+    grid-row: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 1.5rem;
+  }
 
     .job__details--stack {
-      grid-row: 5;
+      grid-row: 6;
       justify-content: left;
     }
   }

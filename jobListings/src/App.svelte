@@ -155,8 +155,6 @@
     },
   ];
 
-  let filteredJobs = [];
-
   // Creates nested array with objects consisting of just the job values
   const jobValues = () => {
     let flattenedJobs = [];
@@ -168,19 +166,8 @@
   };
   const flattenedJobs = jobValues();
 
-  const applyFilters = () => {
-    Object.keys(jobs).forEach((job) => {
-      const hasFilters =
-        $filterKeys.every((key) => flattenedJobs[job].includes(key, 0)) &&
-        $filterKeys.length !== 0;
-      if (hasFilters) {
-        console.log("TRUE");
-      } else {
-        console.log("false");
-      }
-    });
-  };
-  let i = 1
+  // Sets jobs based on filters
+  let filteredJobs = [];
   $: if ($filterKeys.length === 0) {
     filteredJobs = jobs;
   } else {
