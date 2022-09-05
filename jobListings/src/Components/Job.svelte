@@ -1,6 +1,8 @@
 <script>
+  import filterKeys from "../subscriptions/filterKeys";
   import Button from "../UI/Button.svelte";
-  export let filterKeys = [];
+  // export let filterKeys = [];
+
   export let company;
   export let logo;
   export let newPost;
@@ -18,18 +20,20 @@
     let keyValue = JSON.stringify(Object.values(category));
     keyValue = keyValue.replace('["', "");
     keyValue = keyValue.replace('"]', "");
-    if (!filterKeys.includes(keyValue)) {
-      filterKeys = [...filterKeys, keyValue];
-      console.log(filterKeys);
-      console.log("filter added");
-    } else {
-      filterKeys = filterKeys.filter((value) => {
-        return value !== keyValue;
-      });
-      console.log(filterKeys);
-      console.log("filter removed");
-    }
-    return filterKeys;
+    filterKeys.update((keys) => {
+      if (!keys.includes(keyValue)) {
+        keys = [...keys, keyValue];
+        console.log(keys);
+        console.log("filter added");
+      } else {
+        keys = keys.filter((value) => {
+          return value !== keyValue;
+        });
+        console.log(keys);
+        console.log("filter removed");
+      }
+      return [...keys];
+    });
   };
 </script>
 
