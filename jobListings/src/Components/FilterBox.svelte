@@ -12,31 +12,36 @@
           return value !== keyValue;
         });
         console.log("filter removed");
-      } 
+      }
       return [...keys];
     });
   };
-
 </script>
 
 <section id="filter-box">
-    <div id="filter-box__keys">
-         {#each $filterKeys as key}
-    <Button on:click={removeFilter({ key })}>{key}</Button>
-  {/each}
-    </div>
-  <span id="filter-box__clear" on:click="{() => $filterKeys = []}">Clear</span>
+  <div id="filter-box__keys">
+    {#each $filterKeys as key}
+      <Button>{key} <span on:click={removeFilter({ key })}>X</span></Button>
+    {/each}
+  </div>
+  <span id="filter-box__clear" on:click={() => ($filterKeys = [])}>Clear</span>
 </section>
 
 <style>
-#filter-box{
+  #filter-box {
     border: solid;
     display: flex;
     flex-direction: row;
-}
+    justify-content: space-between;
+    padding: 1rem;
+  }
 
-#filter-box__clear{
+  #filter-box__keys {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #filter-box__clear {
     cursor: pointer;
-}
-
+  }
 </style>
