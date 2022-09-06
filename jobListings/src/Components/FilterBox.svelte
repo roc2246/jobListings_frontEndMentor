@@ -21,7 +21,7 @@
 <section id="filter-box">
   <div id="filter-box__keys">
     {#each $filterKeys as key}
-      <Button
+      <Button selected={true}
         >{key}
         <span class="remove-filter" on:click={removeFilter({ key })}>X</span
         ></Button
@@ -39,13 +39,13 @@
     justify-content: space-between;
     padding: 1rem;
 
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     box-shadow: 5px 10px 20px hsl(180, 8%, 52%);
     margin-top: -2rem;
 
     margin-bottom: 1rem;
     padding: 1rem;
-background-color: white;
+    background-color: white;
   }
 
   #filter-box__keys {
@@ -55,7 +55,19 @@ background-color: white;
   }
 
   .remove-filter {
-    border: solid;
+    position: absolute;
+    height: inherit;
+  width: 2rem;
+  margin-left: .4rem;
+  margin-top: -.4rem;
+  line-height: 2;
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    font-weight: 700;
+  }
+
+  .remove-filter:hover {
+    background-color: black;
   }
 
   #filter-box__clear {

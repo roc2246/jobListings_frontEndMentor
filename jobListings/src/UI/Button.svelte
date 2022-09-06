@@ -1,8 +1,8 @@
 <script>
-export let category = null;
+export let selected = false
 </script>
 
-<button on:click class="{category}"><slot /></button>
+<button on:click class={selected === true  ? "applied-filter" : "filter"}><slot /></button>
 
 <style>
 
@@ -29,6 +29,15 @@ button {
   button:hover{
     background-color: hsl(180, 29%, 50%);
     color: white
+  }
+
+  .applied-filter{
+    margin-right: 3.5rem;
+  }
+
+  .applied-filter:hover{
+    background-color: hsl(180, 31%, 95%);
+    color: hsl(180, 29%, 50%);
   }
 
   @media (max-width: 560px){
