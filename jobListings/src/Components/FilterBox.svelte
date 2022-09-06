@@ -72,7 +72,15 @@
 
   #filter-box__clear {
     cursor: pointer;
+    font-weight: 700;
+    color: hsl(180, 8%, 52%);
   }
+
+  #filter-box__clear:hover{
+    color: hsl(180, 29%, 50%);
+    text-decoration: underline;
+  }
+
   @media (max-width: 560px) {
     #filter-box__clear {
       line-height: 4rem;
