@@ -7,8 +7,6 @@
     keyValue = keyValue.replace('["', "");
     keyValue = keyValue.replace('"]', "");
     filterKeys.update((keys) => {
-        console.log(keys)
-        console.log(keyValue)
       if (keys.includes(keyValue)) {
         keys = keys.filter((value) => {
           return value !== keyValue;
@@ -18,13 +16,27 @@
       return [...keys];
     });
   };
+
 </script>
 
-<section id="filters">
-  {#each $filterKeys as key}
+<section id="filter-box">
+    <div id="filter-box__keys">
+         {#each $filterKeys as key}
     <Button on:click={removeFilter({ key })}>{key}</Button>
   {/each}
+    </div>
+  <span id="filter-box__clear" on:click="{() => $filterKeys = []}">Clear</span>
 </section>
 
 <style>
+#filter-box{
+    border: solid;
+    display: flex;
+    flex-direction: row;
+}
+
+#filter-box__clear{
+    cursor: pointer;
+}
+
 </style>
