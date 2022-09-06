@@ -32,6 +32,7 @@
     border: solid;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem;
   }
@@ -39,6 +40,7 @@
   #filter-box__keys {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .remove-filter {

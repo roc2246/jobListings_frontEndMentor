@@ -24,6 +24,7 @@ button {
     
      button {
       margin-left: 0;
+      white-space: nowrap;
     }
   }
 
