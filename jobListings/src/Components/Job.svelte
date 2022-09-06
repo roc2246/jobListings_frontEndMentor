@@ -77,7 +77,6 @@
   .job {
     display: grid;
     border: solid;
-    width: 80%;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 1rem;

@@ -24,9 +24,5 @@
 </section>
 
 <style>
-  #job-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
 </style>
