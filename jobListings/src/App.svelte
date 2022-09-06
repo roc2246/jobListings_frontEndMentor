@@ -202,7 +202,8 @@
   header{
     background-image: url("../images/bg-header-desktop.svg");
     background-color: hsl(180, 8%, 52%);
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
     height: 10rem;
   }
 
