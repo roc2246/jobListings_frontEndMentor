@@ -32,7 +32,7 @@
     border: solid;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     padding: 1rem;
   }
@@ -48,6 +48,6 @@
   }
 
   #filter-box__clear {
-    cursor: pointer;
+  line-height: 4rem;
   }
 </style>
