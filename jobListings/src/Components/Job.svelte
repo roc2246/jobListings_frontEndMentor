@@ -206,6 +206,7 @@
     }
     .job__company {
       grid-row: 2;
+   flex-wrap: nowrap;
     }
     .job__title {
       grid-row: 3;
