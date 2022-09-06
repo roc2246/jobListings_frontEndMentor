@@ -81,7 +81,7 @@
     box-shadow: 5px 10px 20px hsl(180, 8%, 52%);
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 1rem 1rem 2rem 1rem;
 background-color: white;
     grid-template-rows: repeat(auto-fill, 2rem);
     grid-template-columns: 8rem repeat(2, 1fr);

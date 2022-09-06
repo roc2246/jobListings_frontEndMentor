@@ -33,12 +33,19 @@
 
 <style>
   #filter-box {
-    border: solid;
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap; */
     justify-content: space-between;
     padding: 1rem;
+
+    border-radius: .5rem;
+    box-shadow: 5px 10px 20px hsl(180, 8%, 52%);
+    margin-top: -2rem;
+
+    margin-bottom: 1rem;
+    padding: 1rem;
+background-color: white;
   }
 
   #filter-box__keys {
