@@ -156,6 +156,8 @@
     },
   ];
 
+  let showFilterBox
+
   // Creates nested array with objects consisting of just the job values
   const jobValues = () => {
     let flattenedJobs = [];
@@ -170,8 +172,10 @@
   // Sets jobs based on filters
   let filteredJobs = [];
   $: if ($filterKeys.length === 0) {
+    showFilterBox = false
     filteredJobs = jobs;
   } else {
+    showFilterBox = true
     filteredJobs = []
     Object.keys(jobs).forEach((job) => {
       const hasFilters =
@@ -188,7 +192,9 @@
   <h1>Insert image for header here</h1>
 </header>
 <main>
+  {#if showFilterBox === true}
   <FilterBox/>
+  {/if}
   <JobGrid jobs={filteredJobs} />
 </main>
 
