@@ -189,12 +189,11 @@
 </script>
 
 <header>
-  <!-- <h1>Insert image for header here</h1> -->
 </header>
 <main>
-  {#if showFilterBox === true}
+  <!-- {#if showFilterBox === true} -->
   <FilterBox/>
-  {/if}
+  <!-- {/if} -->
   <JobGrid jobs={filteredJobs} />
 </main>
 
@@ -202,7 +201,6 @@
   header{
     background-image: url("../images/bg-header-desktop.svg");
     background-color: hsl(180, 8%, 52%);
-    /* background-repeat: no-repeat; */
     background-size: cover;
     height: 10rem;
   }

@@ -33,6 +33,8 @@ button {
 
   .applied-filter{
     margin-right: 3.5rem;
+    margin-bottom: .5remrem;
+    margin-top: .5rem;
   }
 
   .applied-filter:hover{

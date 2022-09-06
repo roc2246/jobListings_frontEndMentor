@@ -35,7 +35,6 @@
   #filter-box {
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
     justify-content: space-between;
     padding: 1rem;
 
@@ -74,6 +73,9 @@
     cursor: pointer;
     font-weight: 700;
     color: hsl(180, 8%, 52%);
+    display: flex;
+    align-items: center;
+
   }
 
   #filter-box__clear:hover {
