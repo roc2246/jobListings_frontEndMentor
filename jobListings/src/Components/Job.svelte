@@ -148,6 +148,7 @@
   }
   .job__company > p {
     margin-right: 1rem;
+    margin-top: .25rem;
   }
 
   
@@ -205,7 +206,6 @@
     }
     .job__company {
       grid-row: 2;
-   flex-wrap: nowrap;
     }
     .job__title {
       grid-row: 3;

@@ -57,10 +57,10 @@
   .remove-filter {
     position: absolute;
     height: inherit;
-  width: 2rem;
-  margin-left: .4rem;
-  margin-top: -.4rem;
-  line-height: 2;
+    width: 2rem;
+    margin-left: 0.4rem;
+    margin-top: -0.4rem;
+    line-height: 2;
     background-color: hsl(180, 29%, 50%);
     color: white;
     font-weight: 700;
@@ -76,7 +76,7 @@
     color: hsl(180, 8%, 52%);
   }
 
-  #filter-box__clear:hover{
+  #filter-box__clear:hover {
     color: hsl(180, 29%, 50%);
     text-decoration: underline;
   }
