@@ -76,11 +76,13 @@
 
   .job {
     display: grid;
-    border: solid;
+    
+    border-radius: 1rem;
+    box-shadow: 5px 10px 20px hsl(180, 8%, 52%);
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 1rem;
-
+background-color: white;
     grid-template-rows: repeat(auto-fill, 2rem);
     grid-template-columns: 8rem repeat(2, 1fr);
   }
