@@ -191,9 +191,9 @@
 <header>
 </header>
 <main>
-  <!-- {#if showFilterBox === true} -->
+  {#if showFilterBox === true}
   <FilterBox/>
-  <!-- {/if} -->
+  {/if}
   <JobGrid jobs={filteredJobs} />
 </main>
 
