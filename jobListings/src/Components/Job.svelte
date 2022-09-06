@@ -23,11 +23,6 @@
       if (!keys.includes(keyValue)) {
         keys = [...keys, keyValue];
         console.log("filter added");
-      } else {
-        keys = keys.filter((value) => {
-          return value !== keyValue;
-        });
-        console.log("filter removed");
       }
       return [...keys];
     });
