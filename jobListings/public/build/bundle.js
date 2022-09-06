@@ -1220,7 +1220,7 @@ var app = (function () {
     			t12 = space();
     			p3 = element("p");
     			t13 = text(/*location*/ ctx[9]);
-    			t14 = text("   ·  ");
+    			t14 = text(" ");
     			t15 = space();
     			hr = element("hr");
     			t16 = space();
@@ -1256,9 +1256,9 @@ var app = (function () {
     			attr_dev(span1, "class", "job__details--commitment svelte-k6a6h");
     			add_location(span1, file$3, 47, 2, 1159);
     			attr_dev(hr, "class", "svelte-k6a6h");
-    			add_location(hr, file$3, 52, 2, 1395);
+    			add_location(hr, file$3, 52, 2, 1379);
     			attr_dev(span2, "class", "job__details--stack svelte-k6a6h");
-    			add_location(span2, file$3, 53, 2, 1404);
+    			add_location(span2, file$3, 53, 2, 1388);
     			attr_dev(section, "class", section_class_value = "" + (null_to_empty(/*featured*/ ctx[3] !== false ? "job job--new" : "job") + " svelte-k6a6h"));
     			add_location(section, file$3, 31, 0, 755);
     		},

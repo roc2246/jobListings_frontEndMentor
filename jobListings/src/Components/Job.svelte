@@ -48,7 +48,7 @@
   <span class="job__details--commitment">
     <p class="posted-at">{postedAt}&nbsp;  &#183; &nbsp; </p>
     <p class="contract">{contract}&nbsp;  &#183; &nbsp; </p>
-    <p class="location">{location}&nbsp;  &#183; &nbsp; </p>
+    <p class="location">{location}&nbsp;</p>
   </span>
   <hr />
   <span class="job__details--stack">
