@@ -107,7 +107,7 @@
   .company{
     font-weight: 700;
     color:hsl(180, 29%, 50%);
-    margin-top: .25rem;
+    margin-top: .05rem;
   }
   .new{
     background-color: hsl(180, 29%, 50%);
@@ -116,9 +116,9 @@
     padding: .5rem;
     border-radius: 1rem;
     width: 3rem;
-    height: 1rem;
+    height: .5rem;
     text-align: center;
-    line-height: 1;
+    line-height: .5;
   }
 
   .featured{
@@ -128,9 +128,9 @@
     padding: .5rem;
     border-radius: 1rem;
     width: 6rem;
-    height: 1rem;
+    height: .5rem;
     text-align: center;
-    line-height: 1;
+    line-height: .5;
   }
 
 
