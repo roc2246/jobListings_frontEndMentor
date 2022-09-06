@@ -17,7 +17,18 @@ button {
     margin-top: -0.25rem;
     margin-bottom: 0.75rem;
 
+    font-weight: 700;
+
+    background-color: hsl(180, 31%, 95%);
+    color: hsl(180, 29%, 50%);
+    border: none;
+
     cursor: pointer;
+  }
+
+  button:hover{
+    background-color: hsl(180, 29%, 50%);
+    color: white
   }
 
   @media (max-width: 560px){

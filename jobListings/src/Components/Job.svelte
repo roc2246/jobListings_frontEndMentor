@@ -29,7 +29,9 @@
   };
 </script>
 
-<section class={featured !== false && newPost !== false ? 'job job--new' : 'job'}>
+<section
+  class={featured !== false && newPost !== false ? "job job--new" : "job"}
+>
   <div class="job__photo">
     <img src={logo} alt={company} />
   </div>
@@ -76,13 +78,13 @@
 
   .job {
     display: grid;
-    
-    border-radius: .5rem;
+
+    border-radius: 0.5rem;
     box-shadow: 5px 10px 20px hsl(180, 8%, 52%);
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem 1rem 2rem 1rem;
-background-color: white;
+    background-color: white;
     grid-template-rows: repeat(auto-fill, 2rem);
     grid-template-columns: 8rem repeat(2, 1fr);
   }
