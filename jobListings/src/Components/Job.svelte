@@ -216,12 +216,13 @@
     }
     hr {
       display: block;
-      height: 0.05rem;
-      width: 100%;
+      height: 0.01rem;
       grid-row: 5;
       grid-column-start: 1;
       grid-column-end: 3;
       margin-top: 1.5rem;
+      margin-left: .05rem;
+      margin-right: .75rem;
     }
 
     .job__details--stack {

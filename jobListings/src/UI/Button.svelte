@@ -13,9 +13,9 @@ button {
     text-align: center;
     font-size: 15px;
     margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     margin-top: -0.25rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 
     font-weight: 700;
 
@@ -33,7 +33,7 @@ button {
 
   .applied-filter{
     margin-right: 3.5rem;
-    margin-bottom: .5remrem;
+    margin-bottom: .5rem;
     margin-top: .5rem;
   }
 
