@@ -21,7 +21,11 @@
 <section id="filter-box">
   <div id="filter-box__keys">
     {#each $filterKeys as key}
-      <Button>{key} <span class="remove-filter" on:click={removeFilter({ key })}>X</span></Button>
+      <Button
+        >{key}
+        <span class="remove-filter" on:click={removeFilter({ key })}>X</span
+        ></Button
+      >
     {/each}
   </div>
   <span id="filter-box__clear" on:click={() => ($filterKeys = [])}>Clear</span>
@@ -48,6 +52,11 @@
   }
 
   #filter-box__clear {
-  line-height: 4rem;
+    cursor: pointer;
+  }
+  @media (max-width: 560px) {
+    #filter-box__clear {
+      line-height: 4rem;
+    }
   }
 </style>
