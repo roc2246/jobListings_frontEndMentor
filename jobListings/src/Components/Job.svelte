@@ -74,6 +74,11 @@
 
   .job__title {
     cursor: pointer;
+    font-weight: 700;
+  }
+
+  .job__title:hover{
+    color: hsl(180, 29%, 50%);
   }
 
   .job {
@@ -109,6 +114,12 @@
   .job__company > p {
     margin-right: 0.5rem;
   }
+
+  .company{
+    font-weight: 700;
+    color:hsl(180, 29%, 50%);
+  }
+
   .job__title {
     grid-row: 2;
     grid-column: 2;
