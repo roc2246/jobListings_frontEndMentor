@@ -46,7 +46,7 @@
   </span>
   <h4 class="job__title">{position}</h4>
   <span class="job__details--commitment">
-    <p class="posted-at">{postedAt} &#183;</p>
+    <p class="posted-at">{postedAt} &#183; </p>
     <p class="contract">{contract} &#183;</p>
     <p class="location">{location} &#183;</p>
   </span>
