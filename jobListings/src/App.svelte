@@ -1,6 +1,7 @@
 <script>
   import filterKeys from "./subscriptions/filterKeys.js";
   import JobGrid from "./Components/JobGrid.svelte";
+  import FilterBox from './Components/FilterBox.svelte'
 
   let jobs = [
     {
@@ -187,6 +188,7 @@
   <h1>Insert image for header here</h1>
 </header>
 <main>
+  <FilterBox/>
   <JobGrid jobs={filteredJobs} />
 </main>
 

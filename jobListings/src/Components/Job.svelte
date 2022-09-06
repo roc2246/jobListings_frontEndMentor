@@ -53,7 +53,7 @@
     <p class="contract">{contract} &#183;</p>
     <p class="location">{location} &#183;</p>
   </span>
-  <hr>
+  <hr />
   <span class="job__details--stack">
     <Button on:click={() => setFilter({ role })}>{role}</Button>
     <Button on:click={() => setFilter({ level })}>{level}</Button>
@@ -165,15 +165,15 @@
     .job__details--commitment {
       grid-row: 4;
     }
-    hr{
+    hr {
       display: block;
-      height: .05rem;
+      height: 0.05rem;
       width: 100%;
-    grid-row: 5;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    margin-top: 1.5rem;
-  }
+      grid-row: 5;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin-top: 1.5rem;
+    }
 
     .job__details--stack {
       grid-row: 6;
