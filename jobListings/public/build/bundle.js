@@ -1212,15 +1212,15 @@ var app = (function () {
     			span1 = element("span");
     			p1 = element("p");
     			t7 = text(/*postedAt*/ ctx[7]);
-    			t8 = text(" ·");
+    			t8 = text("   ·  ");
     			t9 = space();
     			p2 = element("p");
     			t10 = text(/*contract*/ ctx[8]);
-    			t11 = text(" ·");
+    			t11 = text("   ·  ");
     			t12 = space();
     			p3 = element("p");
     			t13 = text(/*location*/ ctx[9]);
-    			t14 = text(" ·");
+    			t14 = text("   ·  ");
     			t15 = space();
     			hr = element("hr");
     			t16 = space();
@@ -1250,15 +1250,15 @@ var app = (function () {
     			attr_dev(p1, "class", "posted-at svelte-k6a6h");
     			add_location(p1, file$3, 48, 4, 1203);
     			attr_dev(p2, "class", "contract svelte-k6a6h");
-    			add_location(p2, file$3, 49, 4, 1251);
+    			add_location(p2, file$3, 49, 4, 1265);
     			attr_dev(p3, "class", "location svelte-k6a6h");
-    			add_location(p3, file$3, 50, 4, 1297);
+    			add_location(p3, file$3, 50, 4, 1326);
     			attr_dev(span1, "class", "job__details--commitment svelte-k6a6h");
     			add_location(span1, file$3, 47, 2, 1159);
     			attr_dev(hr, "class", "svelte-k6a6h");
-    			add_location(hr, file$3, 52, 2, 1351);
+    			add_location(hr, file$3, 52, 2, 1395);
     			attr_dev(span2, "class", "job__details--stack svelte-k6a6h");
-    			add_location(span2, file$3, 53, 2, 1360);
+    			add_location(span2, file$3, 53, 2, 1404);
     			attr_dev(section, "class", section_class_value = "" + (null_to_empty(/*featured*/ ctx[3] !== false ? "job job--new" : "job") + " svelte-k6a6h"));
     			add_location(section, file$3, 31, 0, 755);
     		},
