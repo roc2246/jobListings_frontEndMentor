@@ -30,7 +30,7 @@
 </script>
 
 <section
-  class={featured !== false && newPost !== false ? "job job--new" : "job"}
+  class={featured !== false ? "job job--new" : "job"}
 >
   <div class="job__photo">
     <img src={logo} alt={company} />
@@ -90,14 +90,49 @@
     margin-bottom: 1rem;
     padding: 1rem 1rem 2rem 1rem;
     background-color: white;
-    grid-template-rows: repeat(auto-fill, 2rem);
+    grid-template-rows: repeat(auto-fill, auto);
     grid-template-columns: 8rem repeat(2, 1fr);
   }
+
+  .job__photo {
+      grid-row-start: 1;
+      grid-row-end:4;
+    }
 
   .job--new {
     border-left: solid;
     border-color: hsl(180, 8%, 52%);
   }
+
+  .company{
+    font-weight: 700;
+    color:hsl(180, 29%, 50%);
+    margin-top: .25rem;
+  }
+  .new{
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    font-weight: 700;
+    padding: .5rem;
+    border-radius: 1rem;
+    width: 3rem;
+    height: 1rem;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .featured{
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    padding: .5rem;
+    border-radius: 1rem;
+    width: 6rem;
+    height: 1rem;
+    text-align: center;
+    line-height: 1;
+  }
+
 
   .job__company,
   .job__details--commitment,
@@ -109,21 +144,19 @@
   .job__company {
     grid-row: 1;
     grid-column: 2;
-    white-space: nowrap;
+   flex-wrap: wrap;
   }
   .job__company > p {
-    margin-right: 0.5rem;
+    margin-right: 1rem;
   }
 
-  .company{
-    font-weight: 700;
-    color:hsl(180, 29%, 50%);
-  }
+  
 
   .job__title {
     grid-row: 2;
     grid-column: 2;
 
+    margin-top: 1rem;
     white-space: nowrap;
   }
   .job__details--commitment {
