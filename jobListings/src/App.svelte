@@ -189,7 +189,7 @@
 </script>
 
 <header>
-  <h1>Insert image for header here</h1>
+  <!-- <h1>Insert image for header here</h1> -->
 </header>
 <main>
   {#if showFilterBox === true}
@@ -199,9 +199,25 @@
 </main>
 
 <style>
+  header{
+    background-image: url("../images/bg-header-desktop.svg");
+    background-color: hsl(180, 8%, 52%);
+    background-repeat: no-repeat;
+    height: 10rem;
+  }
+
   main{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  @media (max-width: 560px){
+    header{
+    background-image: url("../images/bg-header-mobile.svg");
+    background-color: hsl(180, 8%, 52%);
+    background-repeat: no-repeat;
+    height: 10rem;
+  }
   }
 </style>
