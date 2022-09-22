@@ -197,7 +197,8 @@
   <JobGrid jobs={filteredJobs} />
 </main>
 
-<style>
+<style lang="scss">
+  @import "./global";
   header{
     background-image: url("../images/bg-header-desktop.svg");
     background-color: hsl(180, 8%, 52%);

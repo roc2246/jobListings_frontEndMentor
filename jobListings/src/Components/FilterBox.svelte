@@ -35,6 +35,7 @@
 </section>
 
 <style lang="scss">
+  @import "../global";
   .filter-box {
     display: flex;
     flex-direction: row;

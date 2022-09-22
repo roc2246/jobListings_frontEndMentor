@@ -1,12 +1,14 @@
 <script>
-export let selected = false
+  export let selected = false;
 </script>
 
-<button on:click class={selected === true  ? "applied-filter" : "filter"}><slot /></button>
+<button on:click class={selected === true ? "applied-filter" : "filter"}
+  ><slot /></button
+>
 
-<style>
-
-button {
+<style lang="scss">
+  @import "../global";
+  button {
     display: inline-block;
     height: 2rem;
     margin: 0;
@@ -24,30 +26,26 @@ button {
     border: none;
 
     cursor: pointer;
+    &:hover {
+      background-color: hsl(180, 29%, 50%);
+      color: white;
+    }
   }
 
-  button:hover{
-    background-color: hsl(180, 29%, 50%);
-    color: white
-  }
-
-  .applied-filter{
+  .applied-filter {
     margin-right: 3.5rem;
-    margin-bottom: .5rem;
-    margin-top: .5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    &:hover {
+      background-color: hsl(180, 31%, 95%);
+      color: hsl(180, 29%, 50%);
+    }
   }
 
-  .applied-filter:hover{
-    background-color: hsl(180, 31%, 95%);
-    color: hsl(180, 29%, 50%);
-  }
-
-  @media (max-width: 560px){
-    
-     button {
+  @media (max-width: 560px) {
+    button {
       margin-left: 0;
       white-space: nowrap;
     }
   }
-
 </style>

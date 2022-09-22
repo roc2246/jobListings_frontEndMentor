@@ -574,9 +574,9 @@ var app = (function () {
 
     			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*selected*/ ctx[0] === true
     			? "applied-filter"
-    			: "filter") + " svelte-1vvgpf2"));
+    			: "filter") + " svelte-uzrrdn"));
 
-    			add_location(button, file$4, 4, 0, 48);
+    			add_location(button, file$4, 4, 0, 51);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -613,7 +613,7 @@ var app = (function () {
 
     			if (!current || dirty & /*selected*/ 1 && button_class_value !== (button_class_value = "" + (null_to_empty(/*selected*/ ctx[0] === true
     			? "applied-filter"
-    			: "filter") + " svelte-1vvgpf2"))) {
+    			: "filter") + " svelte-uzrrdn"))) {
     				attr_dev(button, "class", button_class_value);
     			}
     		},
@@ -2382,9 +2382,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t1 = space();
     			create_component(jobgrid.$$.fragment);
-    			attr_dev(header, "class", "svelte-sj2cr6");
+    			attr_dev(header, "class", "svelte-wpw8qk");
     			add_location(header, file, 190, 0, 4716);
-    			attr_dev(main, "class", "svelte-sj2cr6");
+    			attr_dev(main, "class", "svelte-wpw8qk");
     			add_location(main, file, 192, 0, 4735);
     		},
     		l: function claim(nodes) {
