@@ -31,7 +31,7 @@
   <span id="filter-box__clear" on:click={() => ($filterKeys = [])}>Clear</span>
 </section>
 
-<style>
+<style lang="scss">
   #filter-box {
     display: flex;
     flex-direction: row;

@@ -2031,7 +2031,7 @@ var app = (function () {
     			t1 = space();
     			span = element("span");
     			span.textContent = "X";
-    			attr_dev(span, "class", "remove-filter svelte-1x9feuq");
+    			attr_dev(span, "class", "remove-filter svelte-1mw76jq");
     			add_location(span, file$1, 25, 8, 680);
     		},
     		m: function mount(target, anchor) {
@@ -2167,13 +2167,13 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Clear";
     			attr_dev(div, "id", "filter-box__keys");
-    			attr_dev(div, "class", "svelte-1x9feuq");
+    			attr_dev(div, "class", "svelte-1mw76jq");
     			add_location(div, file$1, 21, 2, 568);
     			attr_dev(span, "id", "filter-box__clear");
-    			attr_dev(span, "class", "svelte-1x9feuq");
+    			attr_dev(span, "class", "svelte-1mw76jq");
     			add_location(span, file$1, 30, 2, 798);
     			attr_dev(section, "id", "filter-box");
-    			attr_dev(section, "class", "svelte-1x9feuq");
+    			attr_dev(section, "class", "svelte-1mw76jq");
     			add_location(section, file$1, 20, 0, 540);
     		},
     		l: function claim(nodes) {
