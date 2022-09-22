@@ -29,9 +29,7 @@
   };
 </script>
 
-<section
-  class={featured !== false ? "job job--new" : "job"}
->
+<section class={featured !== false ? "job job--new" : "job"}>
   <div class="job__photo">
     <img src={logo} alt={company} />
   </div>
@@ -46,8 +44,8 @@
   </span>
   <h4 class="job__title">{position}</h4>
   <span class="job__details--commitment">
-    <p class="posted-at">{postedAt}&nbsp;  &#183; &nbsp; </p>
-    <p class="contract">{contract}&nbsp;  &#183; &nbsp; </p>
+    <p class="posted-at">{postedAt}&nbsp; &#183; &nbsp;</p>
+    <p class="contract">{contract}&nbsp; &#183; &nbsp;</p>
     <p class="location">{location}&nbsp;</p>
   </span>
   <hr />
@@ -65,25 +63,20 @@
   </span>
 </section>
 
-<style>
+<style lang="scss">
+  @import "../global";
   h4,
   p {
     margin: 0;
     padding: 0;
   }
 
-  .job__title {
-    cursor: pointer;
-    font-weight: 700;
-  }
-
-  .job__title:hover{
-    color: hsl(180, 29%, 50%);
+  hr {
+    display: none;
   }
 
   .job {
     display: grid;
-
     border-radius: 0.5rem;
     box-shadow: 5px 10px 20px hsl(180, 8%, 52%);
     margin-top: 1rem;
@@ -92,128 +85,91 @@
     background-color: white;
     grid-template-rows: repeat(auto-fill, auto);
     grid-template-columns: 8rem repeat(2, 1fr);
-  }
-
-  .job__photo {
+    &__photo {
       grid-row-start: 1;
-      grid-row-end:4;
+      grid-row-end: 4;
     }
+    &__company {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
 
-  .job--new {
-    border-left: solid;
-    border-color: hsl(180, 8%, 52%);
+      grid-row: 1;
+      grid-column: 2;
+      font-weight: 700;
+      color: hsl(180, 29%, 50%);
+      margin-top: 0.05rem;
+
+      & > p {
+        margin-right: 1rem;
+        margin-top: 0.25rem;
+      }
+    }
+    &--new {
+      border-left: solid;
+      border-color: hsl(180, 8%, 52%);
+    }
+    &__title {
+      cursor: pointer;
+      grid-row: 2;
+      grid-column: 2;
+
+      margin-top: 1rem;
+      white-space: nowrap;
+      font-weight: 700;
+      &:hover {
+        color: hsl(180, 29%, 50%);
+      }
+    }
+    &__details {
+      &--commitment {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        grid-row: 3;
+        grid-column: 2;
+        & > p {
+          margin-top: 0.5rem;
+        }
+      }
+      &--stack {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        flex-wrap: wrap;
+        grid-row-start: 2;
+        grid-row-end: 5;
+        grid-column: 3;
+        margin-top: -0.05rem;
+      }
+    }
   }
 
-  .company{
-    font-weight: 700;
-    color:hsl(180, 29%, 50%);
-    margin-top: .05rem;
-  }
-  .new{
+  .new {
     background-color: hsl(180, 29%, 50%);
     color: white;
     font-weight: 700;
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 1rem;
     width: 3rem;
-    height: .5rem;
+    height: 0.5rem;
     text-align: center;
-    line-height: .5;
+    line-height: 0.5;
   }
 
-  .featured{
+  .featured {
     background-color: black;
     color: white;
     font-weight: 700;
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 1rem;
     width: 6rem;
-    height: .5rem;
+    height: 0.5rem;
     text-align: center;
-    line-height: .5;
-  }
-
-
-  .job__company,
-  .job__details--commitment,
-  .job__details--stack {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .job__company {
-    grid-row: 1;
-    grid-column: 2;
-   flex-wrap: wrap;
-  }
-  .job__company > p {
-    margin-right: 1rem;
-    margin-top: .25rem;
-  }
-
-  
-
-  .job__title {
-    grid-row: 2;
-    grid-column: 2;
-
-    margin-top: 1rem;
-    white-space: nowrap;
-  }
-  .job__details--commitment {
-    grid-row: 3;
-    grid-column: 2;
-    flex-wrap: wrap;
-  }
-  .job__details--commitment > p {
-    margin-top: 0.5rem;
-  }
-
-  .job__details--stack {
-    grid-row-start: 2;
-    grid-row-end: 5;
-    grid-column: 3;
-    margin-top: -0.05rem;
-    justify-content: right;
-    flex-wrap: wrap;
-  }
-
-  hr {
-    display: none;
+    line-height: 0.5;
   }
 
   @media (max-width: 560px) {
-    .job {
-      grid-template-rows: repeat(6, auto);
-      grid-template-columns: repeat(3, auto);
-      margin-top: 2rem;
-    }
-
-    .job__company,
-    .job__title,
-    .job__details--commitment,
-    .job__details--stack {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      margin-top: 1rem;
-    }
-
-    .job__photo {
-      position: absolute;
-      margin-top: -4rem;
-      margin-left: -0.5rem;
-      transform: scale(50%);
-    }
-    .job__company {
-      grid-row: 2;
-   flex-wrap: nowrap;
-    }
-    .job__title {
-      grid-row: 3;
-    }
-    .job__details--commitment {
-      grid-row: 4;
-    }
     hr {
       display: block;
       height: 0.01rem;
@@ -221,13 +177,48 @@
       grid-column-start: 1;
       grid-column-end: 3;
       margin-top: 1.5rem;
-      margin-left: .05rem;
-      margin-right: .75rem;
+      margin-left: 0.05rem;
+      margin-right: 0.75rem;
     }
 
-    .job__details--stack {
-      grid-row: 6;
-      justify-content: left;
+    .job {
+      grid-template-rows: repeat(6, auto);
+      grid-template-columns: repeat(3, auto);
+      margin-top: 2rem;
+      &__photo {
+        position: absolute;
+        margin-top: -4rem;
+        margin-left: -0.5rem;
+        transform: scale(50%);
+      }
+      &__company {
+        grid-row: 2;
+        flex-wrap: nowrap;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-top: 1rem;
+      }
+      &__title {
+        grid-row: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-top: 1rem;
+      }
+      &__details {
+        &--commitment {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          grid-row: 4;
+          margin-top: 1rem;
+        }
+        &--stack {
+          grid-row: 6;
+          justify-content: left;
+          grid-column-start: 1;
+          grid-column-end: 3;
+          margin-top: 1rem;
+        }
+      }
     }
   }
 </style>

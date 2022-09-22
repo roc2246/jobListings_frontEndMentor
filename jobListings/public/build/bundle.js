@@ -716,7 +716,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (40:4) {#if newPost !== false}
+    // (38:4) {#if newPost !== false}
     function create_if_block_2(ctx) {
     	let p;
 
@@ -724,8 +724,8 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "NEW!";
-    			attr_dev(p, "class", "new svelte-k6a6h");
-    			add_location(p, file$3, 40, 6, 994);
+    			attr_dev(p, "class", "new svelte-1h896z3");
+    			add_location(p, file$3, 38, 6, 991);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -739,14 +739,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(40:4) {#if newPost !== false}",
+    		source: "(38:4) {#if newPost !== false}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (43:4) {#if featured !== false}
+    // (41:4) {#if featured !== false}
     function create_if_block_1(ctx) {
     	let p;
 
@@ -754,8 +754,8 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "FEATURED";
-    			attr_dev(p, "class", "featured svelte-k6a6h");
-    			add_location(p, file$3, 43, 6, 1063);
+    			attr_dev(p, "class", "featured svelte-1h896z3");
+    			add_location(p, file$3, 41, 6, 1060);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -769,14 +769,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(43:4) {#if featured !== false}",
+    		source: "(41:4) {#if featured !== false}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:4) <Button on:click={() => setFilter({ role })}>
+    // (53:4) <Button on:click={() => setFilter({ role })}>
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -799,14 +799,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(55:4) <Button on:click={() => setFilter({ role })}>",
+    		source: "(53:4) <Button on:click={() => setFilter({ role })}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:4) <Button on:click={() => setFilter({ level })}>
+    // (54:4) <Button on:click={() => setFilter({ level })}>
     function create_default_slot_2(ctx) {
     	let t;
 
@@ -829,14 +829,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(56:4) <Button on:click={() => setFilter({ level })}>",
+    		source: "(54:4) <Button on:click={() => setFilter({ level })}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (58:6) <Button on:click={() => setFilter({ language })}>
+    // (56:6) <Button on:click={() => setFilter({ language })}>
     function create_default_slot_1(ctx) {
     	let t_value = /*language*/ ctx[20] + "";
     	let t;
@@ -860,14 +860,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(58:6) <Button on:click={() => setFilter({ language })}>",
+    		source: "(56:6) <Button on:click={() => setFilter({ language })}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (57:4) {#each languages as language}
+    // (55:4) {#each languages as language}
     function create_each_block_1(ctx) {
     	let button;
     	let current;
@@ -922,14 +922,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(57:4) {#each languages as language}",
+    		source: "(55:4) {#each languages as language}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:4) {#if tools.length !== 0}
+    // (58:4) {#if tools.length !== 0}
     function create_if_block$1(ctx) {
     	let each_1_anchor;
     	let current;
@@ -1018,14 +1018,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(60:4) {#if tools.length !== 0}",
+    		source: "(58:4) {#if tools.length !== 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (62:8) <Button on:click={() => setFilter({ tool })}>
+    // (60:8) <Button on:click={() => setFilter({ tool })}>
     function create_default_slot$1(ctx) {
     	let t_value = /*tool*/ ctx[17] + "";
     	let t;
@@ -1049,14 +1049,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(62:8) <Button on:click={() => setFilter({ tool })}>",
+    		source: "(60:8) <Button on:click={() => setFilter({ tool })}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:6) {#each tools as tool}
+    // (59:6) {#each tools as tool}
     function create_each_block$2(ctx) {
     	let button;
     	let current;
@@ -1111,7 +1111,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(61:6) {#each tools as tool}",
+    		source: "(59:6) {#each tools as tool}",
     		ctx
     	});
 
@@ -1212,11 +1212,11 @@ var app = (function () {
     			span1 = element("span");
     			p1 = element("p");
     			t7 = text(/*postedAt*/ ctx[7]);
-    			t8 = text("   ·  ");
+    			t8 = text("  ·  ");
     			t9 = space();
     			p2 = element("p");
     			t10 = text(/*contract*/ ctx[8]);
-    			t11 = text("   ·  ");
+    			t11 = text("  ·  ");
     			t12 = space();
     			p3 = element("p");
     			t13 = text(/*location*/ ctx[9]);
@@ -1238,28 +1238,28 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			if (!src_url_equal(img.src, img_src_value = /*logo*/ ctx[1])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*company*/ ctx[0]);
-    			add_location(img, file$3, 35, 4, 851);
-    			attr_dev(div, "class", "job__photo svelte-k6a6h");
-    			add_location(div, file$3, 34, 2, 822);
-    			attr_dev(p0, "class", "company svelte-k6a6h");
-    			add_location(p0, file$3, 38, 4, 927);
-    			attr_dev(span0, "class", "job__company svelte-k6a6h");
-    			add_location(span0, file$3, 37, 2, 895);
-    			attr_dev(h4, "class", "job__title svelte-k6a6h");
-    			add_location(h4, file$3, 46, 2, 1118);
-    			attr_dev(p1, "class", "posted-at svelte-k6a6h");
-    			add_location(p1, file$3, 48, 4, 1203);
-    			attr_dev(p2, "class", "contract svelte-k6a6h");
-    			add_location(p2, file$3, 49, 4, 1265);
-    			attr_dev(p3, "class", "location svelte-k6a6h");
-    			add_location(p3, file$3, 50, 4, 1326);
-    			attr_dev(span1, "class", "job__details--commitment svelte-k6a6h");
-    			add_location(span1, file$3, 47, 2, 1159);
-    			attr_dev(hr, "class", "svelte-k6a6h");
-    			add_location(hr, file$3, 52, 2, 1379);
-    			attr_dev(span2, "class", "job__details--stack svelte-k6a6h");
-    			add_location(span2, file$3, 53, 2, 1388);
-    			attr_dev(section, "class", section_class_value = "" + (null_to_empty(/*featured*/ ctx[3] !== false ? "job job--new" : "job") + " svelte-k6a6h"));
+    			add_location(img, file$3, 33, 4, 848);
+    			attr_dev(div, "class", "job__photo svelte-1h896z3");
+    			add_location(div, file$3, 32, 2, 819);
+    			attr_dev(p0, "class", "company svelte-1h896z3");
+    			add_location(p0, file$3, 36, 4, 924);
+    			attr_dev(span0, "class", "job__company svelte-1h896z3");
+    			add_location(span0, file$3, 35, 2, 892);
+    			attr_dev(h4, "class", "job__title svelte-1h896z3");
+    			add_location(h4, file$3, 44, 2, 1115);
+    			attr_dev(p1, "class", "posted-at svelte-1h896z3");
+    			add_location(p1, file$3, 46, 4, 1200);
+    			attr_dev(p2, "class", "contract svelte-1h896z3");
+    			add_location(p2, file$3, 47, 4, 1260);
+    			attr_dev(p3, "class", "location svelte-1h896z3");
+    			add_location(p3, file$3, 48, 4, 1319);
+    			attr_dev(span1, "class", "job__details--commitment svelte-1h896z3");
+    			add_location(span1, file$3, 45, 2, 1156);
+    			attr_dev(hr, "class", "svelte-1h896z3");
+    			add_location(hr, file$3, 50, 2, 1372);
+    			attr_dev(span2, "class", "job__details--stack svelte-1h896z3");
+    			add_location(span2, file$3, 51, 2, 1381);
+    			attr_dev(section, "class", section_class_value = "" + (null_to_empty(/*featured*/ ctx[3] !== false ? "job job--new" : "job") + " svelte-1h896z3"));
     			add_location(section, file$3, 31, 0, 755);
     		},
     		l: function claim(nodes) {
@@ -1413,7 +1413,7 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (!current || dirty & /*featured*/ 8 && section_class_value !== (section_class_value = "" + (null_to_empty(/*featured*/ ctx[3] !== false ? "job job--new" : "job") + " svelte-k6a6h"))) {
+    			if (!current || dirty & /*featured*/ 8 && section_class_value !== (section_class_value = "" + (null_to_empty(/*featured*/ ctx[3] !== false ? "job job--new" : "job") + " svelte-1h896z3"))) {
     				attr_dev(section, "class", section_class_value);
     			}
     		},
@@ -2031,8 +2031,8 @@ var app = (function () {
     			t1 = space();
     			span = element("span");
     			span.textContent = "X";
-    			attr_dev(span, "class", "remove-filter svelte-1mw76jq");
-    			add_location(span, file$1, 25, 8, 680);
+    			attr_dev(span, "class", "filter-box__remove-filter svelte-1206ctn");
+    			add_location(span, file$1, 25, 8, 686);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -2166,14 +2166,11 @@ var app = (function () {
     			t0 = space();
     			span = element("span");
     			span.textContent = "Clear";
-    			attr_dev(div, "id", "filter-box__keys");
-    			attr_dev(div, "class", "svelte-1mw76jq");
-    			add_location(div, file$1, 21, 2, 568);
-    			attr_dev(span, "id", "filter-box__clear");
-    			attr_dev(span, "class", "svelte-1mw76jq");
-    			add_location(span, file$1, 30, 2, 798);
-    			attr_dev(section, "id", "filter-box");
-    			attr_dev(section, "class", "svelte-1mw76jq");
+    			attr_dev(div, "class", "filter-box__keys svelte-1206ctn");
+    			add_location(div, file$1, 21, 2, 571);
+    			attr_dev(span, "class", "filter-box__clear svelte-1206ctn");
+    			add_location(span, file$1, 31, 2, 827);
+    			attr_dev(section, "class", "filter-box svelte-1206ctn");
     			add_location(section, file$1, 20, 0, 540);
     		},
     		l: function claim(nodes) {

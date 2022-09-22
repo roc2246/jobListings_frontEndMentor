@@ -18,21 +18,24 @@
   };
 </script>
 
-<section id="filter-box">
-  <div id="filter-box__keys">
+<section class="filter-box">
+  <div class="filter-box__keys">
     {#each $filterKeys as key}
       <Button selected={true}
         >{key}
-        <span class="remove-filter" on:click={removeFilter({ key })}>X</span
+        <span class="filter-box__remove-filter" on:click={removeFilter({ key })}
+          >X</span
         ></Button
       >
     {/each}
   </div>
-  <span id="filter-box__clear" on:click={() => ($filterKeys = [])}>Clear</span>
+  <span class="filter-box__clear" on:click={() => ($filterKeys = [])}
+    >Clear</span
+  >
 </section>
 
 <style lang="scss">
-  #filter-box {
+  .filter-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -45,47 +48,43 @@
     margin-bottom: 1rem;
     padding: 1rem;
     background-color: white;
-  }
-
-  #filter-box__keys {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .remove-filter {
-    position: absolute;
-    height: inherit;
-    width: 2rem;
-    margin-left: 0.4rem;
-    margin-top: -0.4rem;
-    line-height: 2;
-    background-color: hsl(180, 29%, 50%);
-    color: white;
-    font-weight: 700;
-  }
-
-  .remove-filter:hover {
-    background-color: black;
-  }
-
-  #filter-box__clear {
-    cursor: pointer;
-    font-weight: 700;
-    color: hsl(180, 8%, 52%);
-    display: flex;
-    align-items: center;
-
-  }
-
-  #filter-box__clear:hover {
-    color: hsl(180, 29%, 50%);
-    text-decoration: underline;
+    &__keys {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &__remove-filter {
+      position: absolute;
+      height: inherit;
+      width: 2rem;
+      margin-left: 0.4rem;
+      margin-top: -0.4rem;
+      line-height: 2;
+      background-color: hsl(180, 29%, 50%);
+      color: white;
+      font-weight: 700;
+      &:hover {
+        background-color: black;
+      }
+    }
+    &__clear {
+      cursor: pointer;
+      font-weight: 700;
+      color: hsl(180, 8%, 52%);
+      display: flex;
+      align-items: center;
+      &:hover {
+        color: hsl(180, 29%, 50%);
+        text-decoration: underline;
+      }
+    }
   }
 
   @media (max-width: 560px) {
-    #filter-box__clear {
-      line-height: 4rem;
+    .filter-box {
+      &__clear {
+        line-height: 4rem;
+      }
     }
   }
 </style>
