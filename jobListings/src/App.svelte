@@ -215,9 +215,7 @@
   @media (max-width: 560px){
     header{
     background-image: url("../images/bg-header-mobile.svg");
-    background-color: $pale-green;
     background-repeat: no-repeat;
-    height: 10rem;
   }
   }
 </style>

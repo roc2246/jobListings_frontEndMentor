@@ -2382,9 +2382,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t1 = space();
     			create_component(jobgrid.$$.fragment);
-    			attr_dev(header, "class", "svelte-wpw8qk");
+    			attr_dev(header, "class", "svelte-fo5vsu");
     			add_location(header, file, 190, 0, 4716);
-    			attr_dev(main, "class", "svelte-wpw8qk");
+    			attr_dev(main, "class", "svelte-fo5vsu");
     			add_location(main, file, 192, 0, 4735);
     		},
     		l: function claim(nodes) {
