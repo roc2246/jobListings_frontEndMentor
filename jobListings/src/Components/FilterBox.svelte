@@ -43,7 +43,7 @@
     padding: 1rem;
 
     border-radius: 0.5rem;
-    box-shadow: 5px 10px 20px hsl(180, 8%, 52%);
+    box-shadow: 5px 10px 20px $pale-green;
     margin-top: -2rem;
 
     margin-bottom: 1rem;
@@ -61,7 +61,7 @@
       margin-left: 0.4rem;
       margin-top: -0.4rem;
       line-height: 2;
-      background-color: hsl(180, 29%, 50%);
+      background-color: $green;
       color: white;
       font-weight: 700;
       &:hover {
@@ -71,11 +71,11 @@
     &__clear {
       cursor: pointer;
       font-weight: 700;
-      color: hsl(180, 8%, 52%);
+      color: $pale-green;
       display: flex;
       align-items: center;
       &:hover {
-        color: hsl(180, 29%, 50%);
+        color: $green;
         text-decoration: underline;
       }
     }

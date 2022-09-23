@@ -21,13 +21,13 @@
 
     font-weight: 700;
 
-    background-color: hsl(180, 31%, 95%);
-    color: hsl(180, 29%, 50%);
+    background-color: $pale-white;
+    color: $green;
     border: none;
 
     cursor: pointer;
     &:hover {
-      background-color: hsl(180, 29%, 50%);
+      background-color: $green;
       color: white;
     }
   }
@@ -37,8 +37,8 @@
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
     &:hover {
-      background-color: hsl(180, 31%, 95%);
-      color: hsl(180, 29%, 50%);
+      background-color: $pale-white;
+      color: $green;
     }
   }
 

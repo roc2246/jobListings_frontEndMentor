@@ -201,7 +201,7 @@
   @import "./global";
   header{
     background-image: url("../images/bg-header-desktop.svg");
-    background-color: hsl(180, 8%, 52%);
+    background-color: $pale-green;
     background-size: cover;
     height: 10rem;
   }
@@ -215,7 +215,7 @@
   @media (max-width: 560px){
     header{
     background-image: url("../images/bg-header-mobile.svg");
-    background-color: hsl(180, 8%, 52%);
+    background-color: $pale-green;
     background-repeat: no-repeat;
     height: 10rem;
   }

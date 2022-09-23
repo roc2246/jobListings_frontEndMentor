@@ -78,7 +78,7 @@
   .job {
     display: grid;
     border-radius: 0.5rem;
-    box-shadow: 5px 10px 20px hsl(180, 8%, 52%);
+    box-shadow: 5px 10px 20px $pale-green;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem 1rem 2rem 1rem;
@@ -97,7 +97,7 @@
       grid-row: 1;
       grid-column: 2;
       font-weight: 700;
-      color: hsl(180, 29%, 50%);
+      color: $green;
       margin-top: 0.05rem;
 
       & > p {
@@ -107,7 +107,7 @@
     }
     &--new {
       border-left: solid;
-      border-color: hsl(180, 8%, 52%);
+      border-color: $pale-green;
     }
     &__title {
       cursor: pointer;
@@ -118,7 +118,7 @@
       white-space: nowrap;
       font-weight: 700;
       &:hover {
-        color: hsl(180, 29%, 50%);
+        color: $green;
       }
     }
     &__details {
@@ -146,7 +146,7 @@
   }
 
   .new {
-    background-color: hsl(180, 29%, 50%);
+    background-color: $green;
     color: white;
     font-weight: 700;
     padding: 0.5rem;
