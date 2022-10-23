@@ -1,12 +1,23 @@
 <script>
-  import filterKeys from "../subscriptions/filterKeys";
+  import {filterKeys, getData} from "../subscriptions/filterKeys";
   import Button from "../UI/Button.svelte";
+  import {onMount} from "svelte";
+
+
+  onMount(async () => {
+    let keys = await getData("/keys");
+
+    // if (keys){
+    //     $filterKeys = Object.values(keys)
+    //   console.log($filterKeys)
+    // } 
+  });
 
   const removeFilter = (key) => {
     let keyValue = JSON.stringify(Object.values(key));
     keyValue = keyValue.replace('["', "");
     keyValue = keyValue.replace('"]', "");
-    filterKeys.update((keys) => {
+    $filterKeys.update((keys) => {
       if (keys.includes(keyValue)) {
         keys = keys.filter((value) => {
           return value !== keyValue;
@@ -20,6 +31,7 @@
 
 <section class="filter-box">
   <div class="filter-box__keys">
+    {#if $filterKeys} 
     {#each $filterKeys as key}
       <Button selected={true}
         >{key}
@@ -28,8 +40,9 @@
         ></Button
       >
     {/each}
+    {/if}
   </div>
-  <span class="filter-box__clear" on:click={() => ($filterKeys = [])}
+  <span class="filter-box__clear" on:click
     >Clear</span
   >
 </section>

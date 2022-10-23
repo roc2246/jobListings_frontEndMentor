@@ -1,6 +1,9 @@
 <script>
-  import filterKeys from "./subscriptions/filterKeys.js";
-  import { jobsStore, getData } from "./subscriptions/filterKeys.js";
+  import {
+    jobsStore,
+    filterKeys,
+    getData,
+  } from "./subscriptions/filterKeys.js";
   import JobGrid from "./Components/JobGrid.svelte";
   import FilterBox from "./Components/FilterBox.svelte";
   import { onMount } from "svelte";
@@ -8,15 +11,24 @@
   // Assigns MongoDB data to stores
   onMount(async () => {
     let jobs = await getData("/jobs");
+    let keys = await getData("/keys");
 
     if (jobs) jobsStore.update((data) => jobs);
+    if (keys){
+      $filterKeys = []
+      for(let x in keys){
+        $filterKeys = [...$filterKeys, keys[x].key]
+      }
+        
+      console.log($filterKeys)
+    } 
   });
 
   let showFilterBox;
 
   // Sets jobs based on filters
   let filteredJobs = [];
-  $: if ($filterKeys.length === 0) {
+  $: if ($filterKeys === null) {
     showFilterBox = false;
     filteredJobs = $jobsStore;
   } else {
