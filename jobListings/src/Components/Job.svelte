@@ -1,7 +1,6 @@
 <script>
-  import { filterKeys, getData } from "../subscriptions/filterKeys.js";
-import Button from "../UI/Button.svelte";
-  import {onMount} from "svelte";
+  import { filterKeys } from "../subscriptions/filterKeys.js";
+  import Button from "../UI/Button.svelte";
 
   export let company;
   export let logo;
@@ -16,32 +15,23 @@ import Button from "../UI/Button.svelte";
   export let languages;
   export let tools;
 
-  onMount(async () => {
-    let keys = await getData("/keys");
-
-    // if (keys) filterKeys.update((data) => keys);
-  });
-
   const setFilter = (category) => {
     let keyValue = JSON.stringify(Object.values(category));
     keyValue = keyValue.replace('["', "");
     keyValue = keyValue.replace('"]', "");
-    $filterKeys.update((keys) => {
-      if (!keys.includes(keyValue)) {
-        fetch("/keys", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            key: category,
-          }),
-        });
-        keys = [...keys, keyValue];
-        console.log("filter added");
-      }
-      return [...keys];
-    });
+    if (!$filterKeys.includes(keyValue)) {
+      fetch("/keys", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          key: keyValue,
+        }),
+      });
+      $filterKeys = [...$filterKeys, keyValue];
+      console.log("filter added");
+    }
   };
 </script>
 

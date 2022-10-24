@@ -730,7 +730,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (54:4) {#if newPost !== false}
+    // (44:4) {#if newPost !== false}
     function create_if_block_2(ctx) {
     	let p;
 
@@ -739,7 +739,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "NEW!";
     			attr_dev(p, "class", "new svelte-1h896z3");
-    			add_location(p, file$3, 54, 6, 1382);
+    			add_location(p, file$3, 44, 6, 1146);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -753,14 +753,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(54:4) {#if newPost !== false}",
+    		source: "(44:4) {#if newPost !== false}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (57:4) {#if featured !== false}
+    // (47:4) {#if featured !== false}
     function create_if_block_1$1(ctx) {
     	let p;
 
@@ -769,7 +769,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "FEATURED";
     			attr_dev(p, "class", "featured svelte-1h896z3");
-    			add_location(p, file$3, 57, 6, 1451);
+    			add_location(p, file$3, 47, 6, 1215);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -783,14 +783,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(57:4) {#if featured !== false}",
+    		source: "(47:4) {#if featured !== false}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (69:4) <Button on:click={() => setFilter({ role })}>
+    // (59:4) <Button on:click={() => setFilter({ role })}>
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -813,14 +813,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(69:4) <Button on:click={() => setFilter({ role })}>",
+    		source: "(59:4) <Button on:click={() => setFilter({ role })}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (70:4) <Button on:click={() => setFilter({ level })}>
+    // (60:4) <Button on:click={() => setFilter({ level })}>
     function create_default_slot_2(ctx) {
     	let t;
 
@@ -843,14 +843,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(70:4) <Button on:click={() => setFilter({ level })}>",
+    		source: "(60:4) <Button on:click={() => setFilter({ level })}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (72:6) <Button on:click={() => setFilter({ language })}>
+    // (62:6) <Button on:click={() => setFilter({ language })}>
     function create_default_slot_1(ctx) {
     	let t_value = /*language*/ ctx[21] + "";
     	let t;
@@ -874,14 +874,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(72:6) <Button on:click={() => setFilter({ language })}>",
+    		source: "(62:6) <Button on:click={() => setFilter({ language })}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (71:4) {#each languages as language}
+    // (61:4) {#each languages as language}
     function create_each_block_1(ctx) {
     	let button;
     	let current;
@@ -936,14 +936,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(71:4) {#each languages as language}",
+    		source: "(61:4) {#each languages as language}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:4) {#if tools.length !== 0}
+    // (64:4) {#if tools.length !== 0}
     function create_if_block$2(ctx) {
     	let each_1_anchor;
     	let current;
@@ -1032,14 +1032,14 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(74:4) {#if tools.length !== 0}",
+    		source: "(64:4) {#if tools.length !== 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:8) <Button on:click={() => setFilter({ tool })}>
+    // (66:8) <Button on:click={() => setFilter({ tool })}>
     function create_default_slot$1(ctx) {
     	let t_value = /*tool*/ ctx[18] + "";
     	let t;
@@ -1063,14 +1063,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(76:8) <Button on:click={() => setFilter({ tool })}>",
+    		source: "(66:8) <Button on:click={() => setFilter({ tool })}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:6) {#each tools as tool}
+    // (65:6) {#each tools as tool}
     function create_each_block$2(ctx) {
     	let button;
     	let current;
@@ -1125,7 +1125,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(75:6) {#each tools as tool}",
+    		source: "(65:6) {#each tools as tool}",
     		ctx
     	});
 
@@ -1252,29 +1252,29 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			if (!src_url_equal(img.src, img_src_value = /*logo*/ ctx[1])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*company*/ ctx[0]);
-    			add_location(img, file$3, 49, 4, 1239);
+    			add_location(img, file$3, 39, 4, 1003);
     			attr_dev(div, "class", "job__photo svelte-1h896z3");
-    			add_location(div, file$3, 48, 2, 1210);
+    			add_location(div, file$3, 38, 2, 974);
     			attr_dev(p0, "class", "company svelte-1h896z3");
-    			add_location(p0, file$3, 52, 4, 1315);
+    			add_location(p0, file$3, 42, 4, 1079);
     			attr_dev(span0, "class", "job__company svelte-1h896z3");
-    			add_location(span0, file$3, 51, 2, 1283);
+    			add_location(span0, file$3, 41, 2, 1047);
     			attr_dev(h4, "class", "job__title svelte-1h896z3");
-    			add_location(h4, file$3, 60, 2, 1506);
+    			add_location(h4, file$3, 50, 2, 1270);
     			attr_dev(p1, "class", "posted-at svelte-1h896z3");
-    			add_location(p1, file$3, 62, 4, 1591);
+    			add_location(p1, file$3, 52, 4, 1355);
     			attr_dev(p2, "class", "contract svelte-1h896z3");
-    			add_location(p2, file$3, 63, 4, 1651);
+    			add_location(p2, file$3, 53, 4, 1415);
     			attr_dev(p3, "class", "location svelte-1h896z3");
-    			add_location(p3, file$3, 64, 4, 1710);
+    			add_location(p3, file$3, 54, 4, 1474);
     			attr_dev(span1, "class", "job__details--commitment svelte-1h896z3");
-    			add_location(span1, file$3, 61, 2, 1547);
+    			add_location(span1, file$3, 51, 2, 1311);
     			attr_dev(hr, "class", "svelte-1h896z3");
-    			add_location(hr, file$3, 66, 2, 1763);
+    			add_location(hr, file$3, 56, 2, 1527);
     			attr_dev(span2, "class", "job__details--stack svelte-1h896z3");
-    			add_location(span2, file$3, 67, 2, 1772);
+    			add_location(span2, file$3, 57, 2, 1536);
     			attr_dev(section, "class", section_class_value = "" + (null_to_empty(/*featured*/ ctx[3] !== false ? "job job--new" : "job") + " svelte-1h896z3"));
-    			add_location(section, file$3, 47, 0, 1146);
+    			add_location(section, file$3, 37, 0, 910);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1496,29 +1496,21 @@ var app = (function () {
     	let { languages } = $$props;
     	let { tools } = $$props;
 
-    	onMount(async () => {
-    		await getData("/keys");
-    	}); // if (keys) filterKeys.update((data) => keys);
-
     	const setFilter = category => {
     		let keyValue = JSON.stringify(Object.values(category));
     		keyValue = keyValue.replace('["', "");
     		keyValue = keyValue.replace('"]', "");
 
-    		$filterKeys.update(keys => {
-    			if (!keys.includes(keyValue)) {
-    				fetch("/keys", {
-    					method: "POST",
-    					headers: { "Content-Type": "application/json" },
-    					body: JSON.stringify({ key: category })
-    				});
+    		if (!$filterKeys.includes(keyValue)) {
+    			fetch("/keys", {
+    				method: "POST",
+    				headers: { "Content-Type": "application/json" },
+    				body: JSON.stringify({ key: keyValue })
+    			});
 
-    				keys = [...keys, keyValue];
-    				console.log("filter added");
-    			}
-
-    			return [...keys];
-    		});
+    			set_store_value(filterKeys, $filterKeys = [...$filterKeys, keyValue], $filterKeys);
+    			console.log("filter added");
+    		}
     	};
 
     	const writable_props = [
@@ -1562,9 +1554,7 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		filterKeys,
-    		getData,
     		Button,
-    		onMount,
     		company,
     		logo,
     		newPost,
