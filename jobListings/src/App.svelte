@@ -19,8 +19,6 @@
       for(let x in keys){
         $filterKeys = [...$filterKeys, keys[x].key]
       }
-        
-      console.log($filterKeys)
     } 
   });
 

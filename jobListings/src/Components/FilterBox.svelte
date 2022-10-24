@@ -1,31 +1,24 @@
 <script>
-  import {filterKeys, getData} from "../subscriptions/filterKeys";
+  import {filterKeys} from "../subscriptions/filterKeys";
   import Button from "../UI/Button.svelte";
-  import {onMount} from "svelte";
 
-
-  onMount(async () => {
-    let keys = await getData("/keys");
-
-    // if (keys){
-    //     $filterKeys = Object.values(keys)
-    //   console.log($filterKeys)
-    // } 
-  });
-
+  console.log($filterKeys)
   const removeFilter = (key) => {
-    let keyValue = JSON.stringify(Object.values(key));
-    keyValue = keyValue.replace('["', "");
-    keyValue = keyValue.replace('"]', "");
-    $filterKeys.update((keys) => {
-      if (keys.includes(keyValue)) {
-        keys = keys.filter((value) => {
-          return value !== keyValue;
-        });
-        console.log("filter removed");
-      }
-      return [...keys];
-    });
+    const removedKey = key.key
+   fetch('/keys',  {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            key: removedKey,
+          }),
+        })
+
+    $filterKeys = $filterKeys.filter(selectedKey => {
+      return selectedKey !== removedKey
+    })
+    console.log($filterKeys)
   };
 </script>
 
