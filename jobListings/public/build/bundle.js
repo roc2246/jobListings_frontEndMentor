@@ -2525,9 +2525,9 @@ var app = (function () {
     			t1 = space();
     			if (if_block1) if_block1.c();
     			attr_dev(header, "class", "svelte-fo5vsu");
-    			add_location(header, file, 50, 0, 1296);
+    			add_location(header, file, 50, 0, 1324);
     			attr_dev(main, "class", "svelte-fo5vsu");
-    			add_location(main, file, 51, 0, 1307);
+    			add_location(main, file, 51, 0, 1335);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2676,7 +2676,7 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*$filterKeys, $jobsStore, filteredJobs*/ 11) {
-    			if ($filterKeys === null) {
+    			if ($filterKeys === null || $filterKeys.length === 0) {
     				$$invalidate(2, showFilterBox = false);
     				$$invalidate(0, filteredJobs = $jobsStore);
     			} else {

@@ -26,7 +26,7 @@
 
   // Sets jobs based on filters
   let filteredJobs = [];
-  $: if ($filterKeys === null) {
+  $: if ($filterKeys === null || $filterKeys.length === 0) {
     showFilterBox = false;
     filteredJobs = $jobsStore;
   } else {
