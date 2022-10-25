@@ -1,1 +1,0 @@
-web: node ./jobListings/index.js
