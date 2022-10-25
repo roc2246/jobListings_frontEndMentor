@@ -1,12 +1,17 @@
 {
   "name": "svelte-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.3.1",
+    "npm": "8.3.2"
+  },
   "private": true,
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "deploy": "npx gh-pages -d dist",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
