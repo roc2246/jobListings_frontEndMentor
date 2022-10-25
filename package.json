@@ -10,7 +10,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "deploy": "npx gh-pages -d dist",
-    "start": "nodemon index.js",
+    "start": "nodemon ./jobListings/index.js",
     "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
