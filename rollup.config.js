@@ -30,12 +30,12 @@ function serve() {
 }
 
 export default {
-	input: 'src/main.js',
+	input: 'jobListings/src/main.js',
 	output: {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: 'jobListings/public/build/bundle.js'
 	},
 	plugins: [
 		svelte({
