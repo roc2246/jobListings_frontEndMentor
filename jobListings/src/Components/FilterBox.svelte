@@ -39,13 +39,13 @@
           >{key}
           <span
             class="filter-box__remove-filter"
-            on:click={removeFilter({ key })}>X</span
+            on:keydown on:click={removeFilter({ key })}>X</span
           ></Button
         >
       {/each}
     {/if}
   </div>
-  <span class="filter-box__clear" on:click={() => removeAll()}>Clear</span>
+  <span class="filter-box__clear" on:keydown on:click={() => removeAll()}>Clear</span>
 </section>
 
 <style lang="scss">

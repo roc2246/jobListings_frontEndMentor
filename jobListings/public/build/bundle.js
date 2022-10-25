@@ -2030,7 +2030,7 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
+    	child_ctx[6] = list[i];
     	return child_ctx;
     }
 
@@ -2132,7 +2132,7 @@ var app = (function () {
 
     // (38:8) <Button selected={true}           >
     function create_default_slot(ctx) {
-    	let t0_value = /*key*/ ctx[4] + "";
+    	let t0_value = /*key*/ ctx[6] + "";
     	let t0;
     	let t1;
     	let span;
@@ -2154,30 +2154,33 @@ var app = (function () {
     			insert_dev(target, span, anchor);
 
     			if (!mounted) {
-    				dispose = listen_dev(
-    					span,
-    					"click",
-    					function () {
-    						if (is_function(/*removeFilter*/ ctx[1]({ key: /*key*/ ctx[4] }))) /*removeFilter*/ ctx[1]({ key: /*key*/ ctx[4] }).apply(this, arguments);
-    					},
-    					false,
-    					false,
-    					false
-    				);
+    				dispose = [
+    					listen_dev(span, "keydown", /*keydown_handler*/ ctx[4], false, false, false),
+    					listen_dev(
+    						span,
+    						"click",
+    						function () {
+    							if (is_function(/*removeFilter*/ ctx[1]({ key: /*key*/ ctx[6] }))) /*removeFilter*/ ctx[1]({ key: /*key*/ ctx[6] }).apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					)
+    				];
 
     				mounted = true;
     			}
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*$filterKeys*/ 1 && t0_value !== (t0_value = /*key*/ ctx[4] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*$filterKeys*/ 1 && t0_value !== (t0_value = /*key*/ ctx[6] + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(span);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -2217,7 +2220,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope, $filterKeys*/ 129) {
+    			if (dirty & /*$$scope, $filterKeys*/ 513) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -2269,7 +2272,7 @@ var app = (function () {
     			attr_dev(div, "class", "filter-box__keys svelte-1206ctn");
     			add_location(div, file$1, 34, 2, 702);
     			attr_dev(span, "class", "filter-box__clear svelte-1206ctn");
-    			add_location(span, file$1, 47, 2, 1017);
+    			add_location(span, file$1, 47, 2, 1028);
     			attr_dev(section, "class", "filter-box svelte-1206ctn");
     			add_location(section, file$1, 33, 0, 671);
     		},
@@ -2285,7 +2288,11 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(span, "click", /*click_handler*/ ctx[3], false, false, false);
+    				dispose = [
+    					listen_dev(span, "keydown", /*keydown_handler_1*/ ctx[3], false, false, false),
+    					listen_dev(span, "click", /*click_handler*/ ctx[5], false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
@@ -2326,7 +2333,7 @@ var app = (function () {
     			if (detaching) detach_dev(section);
     			if (if_block) if_block.d();
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -2381,6 +2388,14 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<FilterBox> was created with unknown prop '${key}'`);
     	});
 
+    	function keydown_handler_1(event) {
+    		bubble.call(this, $$self, event);
+    	}
+
+    	function keydown_handler(event) {
+    		bubble.call(this, $$self, event);
+    	}
+
     	const click_handler = () => removeAll();
 
     	$$self.$capture_state = () => ({
@@ -2391,7 +2406,14 @@ var app = (function () {
     		$filterKeys
     	});
 
-    	return [$filterKeys, removeFilter, removeAll, click_handler];
+    	return [
+    		$filterKeys,
+    		removeFilter,
+    		removeAll,
+    		keydown_handler_1,
+    		keydown_handler,
+    		click_handler
+    	];
     }
 
     class FilterBox extends SvelteComponentDev {
