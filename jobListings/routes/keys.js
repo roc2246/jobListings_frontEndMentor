@@ -39,4 +39,16 @@ router.delete("/", async (req, res) => {
  
 });
 
+// Removes All Keys
+router.delete("/all", async (req, res) => {
+  try {
+       await Key.deleteMany({})
+       res.json({ message: "Removed All Filter" });
+       
+  } catch (error) {
+       res.status(500).json({ message: error.message });
+     }
+
+});
+
 module.exports = router;

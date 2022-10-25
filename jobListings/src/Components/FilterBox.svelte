@@ -1,43 +1,51 @@
 <script>
-  import {filterKeys} from "../subscriptions/filterKeys";
+  import { filterKeys } from "../subscriptions/filterKeys";
   import Button from "../UI/Button.svelte";
 
-  console.log($filterKeys)
   const removeFilter = (key) => {
-    const removedKey = key.key
-   fetch('/keys',  {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            key: removedKey,
-          }),
-        })
+    const removedKey = key.key;
+    fetch("/keys", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        key: removedKey,
+      }),
+    });
 
-    $filterKeys = $filterKeys.filter(selectedKey => {
-      return selectedKey !== removedKey
-    })
-    console.log($filterKeys)
+    $filterKeys = $filterKeys.filter((selectedKey) => {
+      return selectedKey !== removedKey;
+    });
   };
+
+  const removeAll = () => {
+    fetch("/keys/all", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    $filterKeys = []
+  }
 </script>
 
 <section class="filter-box">
   <div class="filter-box__keys">
-    {#if $filterKeys} 
-    {#each $filterKeys as key}
-      <Button selected={true}
-        >{key}
-        <span class="filter-box__remove-filter" on:click={removeFilter({ key })}
-          >X</span
-        ></Button
-      >
-    {/each}
+    {#if $filterKeys}
+      {#each $filterKeys as key}
+        <Button selected={true}
+          >{key}
+          <span
+            class="filter-box__remove-filter"
+            on:click={removeFilter({ key })}>X</span
+          ></Button
+        >
+      {/each}
     {/if}
   </div>
-  <span class="filter-box__clear" on:click
-    >Clear</span
-  >
+  <span class="filter-box__clear" on:click={() => removeAll()}>Clear</span>
 </section>
 
 <style lang="scss">
