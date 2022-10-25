@@ -1,11 +1,10 @@
-require('dotenv').config
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, './.env') });
 
 const mongoose = require("mongoose");
 const localDB = 'mongodb://127.0.0.1:27017/job-filters'
-const dbName = "comments"
-// const MONGODB_URI = `mongodb+srv://childswebdev:${password}@comment-section-cluster.mn0pidu.mongodb.net/${dbName}?retryWrites=true&w=majority`
 const db = mongoose.connection
-
+console.log(process.env.MONGODB_URI)
 // Set up MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true

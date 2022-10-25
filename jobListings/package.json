@@ -29,7 +29,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.6.6",
+    "mongoose": "^6.7.0",
     "sirv-cli": "^2.0.0"
   }
 }
