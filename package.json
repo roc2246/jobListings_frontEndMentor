@@ -7,8 +7,8 @@
   },
   "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "build": "jobListings/rollup -c",
+    "dev": "jobListings/rollup -c -w",
     "deploy": "npx gh-pages -d dist",
     "start": "nodemon jobListings/index.js",
     "heroku-postbuild": "npm run build"
