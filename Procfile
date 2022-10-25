@@ -1,1 +1,1 @@
-web: node jobListings/index.js
+web: node jindex.js
